@@ -1,35 +1,23 @@
 import React from 'react';
+import {Router, Route, hashHistory} from 'react-router';
 import $ from 'jquery';
 
-import {Router, Route, hashHistory} from 'react-router';
 import store from '../store';
 
 const QuestionPreview = React.createClass({
-  getInitialState(){
-    return {showModal:false}
-  },
   showQuestion: function(){
-    this.setState({showModal:true});
+    <QuestionModal props={this.category}/>
+    // router.push('/questionModal');
   },
   render: function(){
-    let modal;
-    if (this.state.showModal) {
-      // console.log(this);
-      modal = (
-        <div className="question-modal">
-
+    return (
+        <div className="question-preview">
+          <h3>{this.props.clues.value}</h3>
+          <input className="input-answer" type="text" placeholder="type in your answer..." />
+          <input className="submit-btn" type="submit" value="submit answer" onClick={this.submitAnswer}/>
         </div>
       );
     }
-      let cluesArr = store.categories.clues.map((clue, i, arr)=>{
-        return <h3 key={i} onClick={this.showQuestion}>{`$`}{clue.value}</h3>
-      });
-    return (
-      <div>
-        {cluesArr}
-      </div>
-    );
-  }
 });
 
 export default QuestionPreview;

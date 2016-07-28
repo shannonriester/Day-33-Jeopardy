@@ -5,8 +5,7 @@ const store = {
     username: '',
     password: '',
   },
-  categories: CategoriesCollection,
-  settings:{}
+  categories: new CategoriesCollection(),
 }
 
 export default store;

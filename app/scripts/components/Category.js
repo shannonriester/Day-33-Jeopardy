@@ -14,6 +14,7 @@ const QuestionPreview = React.createClass({
     // console.log(this.props.clues);
     return (
       <div>
+        <h2></h2>
       </div>
     );
   }
