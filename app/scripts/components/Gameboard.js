@@ -11,9 +11,7 @@ const Gamebaord = React.createClass({
       categories: store.categories.toJSON()
     }
   },
-  componentWillMount: function(){},
   componentDidMount: function(){
-
     store.categories.add({});
 
     store.categories.on('update change', () => {
@@ -25,13 +23,13 @@ const Gamebaord = React.createClass({
     });
   },
   render: function(){
-    let categoryColumn = this.state.categories.map((catObj, i, arr) => {
+    let categoriesArr = this.state.categories.map((catObj, i, arr) => {
       // console.log(catObj.category.title);
       // console.log(catObj.category.clues);
       return <CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />;
       });
     return (
-      <div className="gamebaord">{categoryColumn}</div>
+      <div className="gamebaord">{categoriesArr}</div>
     );
   }
 });
