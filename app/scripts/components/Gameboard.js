@@ -13,13 +13,9 @@ const Gamebaord = React.createClass({
     }
   },
   componentDidMount: function(){
-    store.categories.add({});
-    // store.categories.add({});
-    // store.categories.add({});
-    // store.categories.add({});
-    // store.categories.add({});
-    // store.categories.add({});
-
+    _(6).times(function(){
+      store.categories.add({})
+    });
     store.categories.on('update change', () => {
       this.setState({categories: store.categories.toJSON()});
     });
@@ -35,7 +31,7 @@ const Gamebaord = React.createClass({
       return <CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />;
       });
     return (
-      <div className="gamebaord">{categoriesArr}</div>
+      <div id="game-container"><div className="gamebaord">{categoriesArr}</div></div>
     );
   }
 });

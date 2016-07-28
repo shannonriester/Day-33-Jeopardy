@@ -1,22 +1,9 @@
+@import "_variables.scss";
+@import "gameboard.scss";
+@import "modal.scss";
+@import "column.scss";
+
 body {
   font-family: sans-serif;
   margin: 0;
-}
-
-.modal-container{
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20% 0 0;
-  background: rgba(0, 0, 0,.6);
-}
-
-.modal {
-  height: 75%;
-  width: 80%;
-  margin: 0 auto;
-  background: #EDEFED;
-  overflow: scroll;
 }

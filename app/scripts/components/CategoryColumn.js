@@ -22,12 +22,15 @@ const CategoryColumn = React.createClass({
     if (this.state.showModal) {
       questionModal = <QuestionModal hideModal={this.hideModal} clue={this.state.clue}/>;
     }
+    if (!this.props.clues) {
+      return null;
+    }
     let cluesObj = this.props.clues.map((clue,i) => {
       return (<QuestionPreview showModal={this.showModal} key={i} clue={clue} />);
     });
     return (
       <div className="column-container">
-        <h2>{this.props.title}</h2>
+        <h3>{this.props.title}</h3>
         <ul className="question-preview-container">{cluesObj}</ul>
         {questionModal}
       </div>

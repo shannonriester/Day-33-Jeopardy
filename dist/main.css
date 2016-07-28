@@ -1,6 +1,28 @@
-body {
-  font-family: sans-serif;
-  margin: 0; }
+#game-container::after {
+  content: ' ';
+  background: url("../assets/Jeopardy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  background-position: center center; }
+
+.gameboard {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw; }
+  .gameboard::after {
+    content: ' ';
+    clear: both;
+    display: block; }
 
 .modal-container {
   position: fixed;
@@ -17,5 +39,17 @@ body {
   margin: 0 auto;
   background: #EDEFED;
   overflow: scroll; }
+
+.column-container {
+  margin: 0;
+  width: calc(100vw/6);
+  float: left; }
+  .column-container h3 {
+    padding: 0;
+    margin: 0; }
+
+body {
+  font-family: sans-serif;
+  margin: 0; }
 
 /*# sourceMappingURL=main.css.map */

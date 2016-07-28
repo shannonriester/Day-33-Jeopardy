@@ -8,15 +8,16 @@ const QuestionModal = React.createClass({
     e.preventDefault();
     let userAnswer = this.refs.useranswer.value.toLowerCase();
     let jeopardyAnswer = this.props.clue.answer.toLowerCase();
-    console.log('jeopardyAnswer ', jeopardyAnswer);
-    console.log('userAnswer ', userAnswer);
+
     if (userAnswer === this.props.clue.answer) {
       console.log('you got the answer right!');
     } else {
       console.log('wrong answer...');
     }
-    console.log(this.props);
+    console.log('jeopardyAnswer ', jeopardyAnswer);
+    console.log('userAnswer ', userAnswer);
     this.props.hideModal();
+    // console.log(this);
   },
   render: function(){
     return (

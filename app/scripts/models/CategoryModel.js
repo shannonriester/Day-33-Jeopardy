@@ -12,16 +12,20 @@ const CategoryModel = Backbone.Model.extend({
       type: 'GET',
       url: `http://jservice.io/api/category?id=${categoryId}`,
       success: (response) =>{
-      let filterN = 200;
-      let category = response;
-      let cluesArr = category.clues.filter((clue, i, arr) => {
-        if (clue.value === filterN) {
-          filterN += 200;
-          return clue;
+        let filterN = 200;
+        let category = response;
+        let cluesArr = category.clues.filter((clue, i, arr) => {
+          if (clue.value === filterN) {
+            filterN += 200;
+            return clue;
+          }
+        });
+        if (cluesArr.length === 5) {
+          category.clues = cluesArr;
+          this.set('category', category);
+        } else {
+          this.getCategory(Math.floor(Math.random() * 18000));
         }
-      });
-      category.clues = cluesArr;
-      this.set('category', category);
       }
     });
   },
