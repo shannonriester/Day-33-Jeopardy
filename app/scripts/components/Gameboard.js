@@ -11,33 +11,42 @@ const Gamebaord = React.createClass({
   },
   componentWillMount: function(){},
   componentDidMount: function(){
-    $.ajax({
-      type: 'GET',
-      url: `http://jservice.io/api/category?id=1`,
-      success: (response) =>{
-      let filterN = 200;
-      let category = response;
-      let cluesArr = category.clues.filter((clue, i, arr) => {
-        if (clue.value === filterN) {
-          filterN += 200;
-          return clue;
+    this.gameCategories();
+  },
+  gameCategories: function(){
+    for (var i = 1; i <= 6; i++) {
+      $.ajax({
+        type: 'GET',
+        url: `http://jservice.io/api/category?id=${i}`,
+        success: (response) =>{
+        let filterN = 200;
+        let category = response;
+        let cluesArr = category.clues.filter((clue, i, arr) => {
+          if (clue.value === filterN) {
+            filterN += 200;
+            return clue;
+          }
+        });
+        category.clues = cluesArr;
+        let currentState = this.state.categories;
+        currentState.push(category);
+        this.setState({categories:currentState});
         }
       });
-      category.clues = cluesArr;
-      let currentState = this.state.categories;
-      currentState.push(category);
-      this.setState({categories:currentState});
-      }
-    });
+    };
   },
   render: function(){
-    console.log('state ', this.state);
-    let categoryTitle = this.state.categories.title;
+    if (!this.state.categories){
+      console.log('not yet...');
+      return null;
+    }
+    let categoryArr = this.state.categories.map(function(catObj, i, arr){
+      // console.log(catObj.title);
+      return <h2>{catObj.title}<h2>;
+    });
+    // console.log(this.state.categories[0]);
     return (
-      <div>
-        {categoryTitle}
-        <Category clues={this.state.categories.clues}/>
-      </div>
+      <div>{categoryArr}</div>
     );
   }
 });
