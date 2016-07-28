@@ -1,14 +1,10 @@
 import React from 'react';
-import {Router, Route} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 import $ from 'jquery';
 
-import {Router, Route, hashHistory} from 'react-router';
 import store from '../store';
 
 const QuestionModal = React.createClass({
-  showQuestion: function(){
-    router.push('/questionModal');
-  },
   submitAnswer: function(){
     let userAnswer = $('.input-answer').val();
   },

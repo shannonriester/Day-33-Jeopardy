@@ -3,18 +3,19 @@ import {Router, Route, hashHistory} from 'react-router';
 import $ from 'jquery';
 
 import store from '../store';
+import QuestionModal from './QuestionModal';
 
 const QuestionPreview = React.createClass({
   showQuestion: function(){
-    <QuestionModal props={this.category}/>
-    // router.push('/questionModal');
+    // <QuestionModal clues={this.props}/>
   },
   render: function(){
+
+    console.log(this.props);
     return (
-        <div className="question-preview">
-          <h3>{this.props.clues.value}</h3>
-          <input className="input-answer" type="text" placeholder="type in your answer..." />
-          <input className="submit-btn" type="submit" value="submit answer" onClick={this.submitAnswer}/>
+        <div className="column-container">
+          <h3>{this.props.title}</h3>
+          <div className="question-preview" onClick={this.showQuestion}>{questionPreview}</div>
         </div>
       );
     }

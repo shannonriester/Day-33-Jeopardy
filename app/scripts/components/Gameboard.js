@@ -2,7 +2,7 @@ import React from 'react';
 import Backbone from 'backbone';
 import $ from 'jquery';
 
-import QuestionPreview from './QuestionPreview';
+import CategoryColumn from './CategoryColumn';
 import store from '../store';
 
 const Gamebaord = React.createClass({
@@ -25,22 +25,13 @@ const Gamebaord = React.createClass({
     });
   },
   render: function(){
-    // if (!store.categories.models[0]){
-    //   console.log('not yet...');
-    //   return null;
-    // }
-
-    let questionPreviews = this.state.categories.map((catObj, i, arr) => {
-      console.log(catObj);
-      console.log(catObj.category.title);
-      console.log(catObj.category.clues);
-      return <QuestionPreview
-                key={i}
-                title={catObj.category.title}
-                clues={catObj.category.clues} />;
+    let categoryColumn = this.state.categories.map((catObj, i, arr) => {
+      // console.log(catObj.category.title);
+      // console.log(catObj.category.clues);
+      return <CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />;
       });
     return (
-      <div>{questionPreviews}</div>
+      <div className="gamebaord">{categoryColumn}</div>
     );
   }
 });
