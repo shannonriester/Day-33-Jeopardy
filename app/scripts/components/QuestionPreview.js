@@ -1,23 +1,27 @@
 import React from 'react';
-import {Router, Route, hashHistory} from 'react-router';
-import $ from 'jquery';
+// import {Router, Route, hashHistory} from 'react-router';
 
 import store from '../store';
+import QuestionModal from './QuestionModal';
+
 
 const QuestionPreview = React.createClass({
-  showQuestion: function(){
+  getInitialState: function(){
+    return {showModal:false}
+  },
+  showModal: function(){
     console.log('show modal!');
-    <QuestionModal />;
+    this.setState({showModal:true});
   },
   render: function(){
-    // console.log(this.props);
-    return (
-        <div className="column-container">
-          <h3>{this.props.title}</h3>
-          <div className="question-preview">{}</div>
-        </div>
-      );
+    let questionModal;
+    if (this.state.showModal) {
+      questionModal = <QuestionModal clue={this.props.clue}/>;
     }
+    return (
+      <li className="q-previews" onClick={this.showModal}>${this.props.clue.value}{questionModal}</li>
+    );
+  }
 });
 
 export default QuestionPreview;

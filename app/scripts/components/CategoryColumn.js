@@ -7,11 +7,10 @@ const CategoryColumn = React.createClass({
     let cluesObj = this.props.clues.map((clue,i) => {
       return <QuestionPreview key={i} clue={clue} />;
     });
-    console.log(cluesObj);
     return (
       <div className="column-container">
         <h2>{this.props.title}</h2>
-        <ul>{cluesObj}</ul>
+        <ul className="question-preview-container">{cluesObj}</ul>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, hashHistory} from 'react-router';
+// import {Router, Route, hashHistory} from 'react-router';
 import $ from 'jquery';
 
 import store from '../store';
@@ -12,7 +12,7 @@ const QuestionModal = React.createClass({
     return (
       <div className="modal-container">
         <div className="modal">
-          <h3>{this.props.clues.question}</h3>
+          <h3></h3>
           <input className="input-answer" type="text" placeholder="type in your answer..." />
           <input className="submit-btn" type="submit" value="submit answer" onClick={this.submitAnswer}/>
         </div>

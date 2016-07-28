@@ -1,5 +1,6 @@
 import React from 'react';
 import Backbone from 'backbone';
+import _ from 'underscore';
 import $ from 'jquery';
 
 import CategoryColumn from './CategoryColumn';
@@ -13,6 +14,11 @@ const Gamebaord = React.createClass({
   },
   componentDidMount: function(){
     store.categories.add({});
+    // store.categories.add({});
+    // store.categories.add({});
+    // store.categories.add({});
+    // store.categories.add({});
+    // store.categories.add({});
 
     store.categories.on('update change', () => {
       this.setState({categories: store.categories.toJSON()});
