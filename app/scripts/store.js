@@ -1,12 +1,13 @@
 import CategoriesCollection from './collections/CategoriesCollection';
+import Score from './models/Score';
 
 const store = {
   session: {
-    username: '',
+    username: 'Shanni',
     password: '',
   },
   categories: new CategoriesCollection(),
-  // score: new Score(),
+  score: new Score(),
   settings: {
     baseUrl: 'https://baas.kinvey.com',
     appKey: 'kid_rkjTLZY_',

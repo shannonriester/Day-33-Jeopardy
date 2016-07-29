@@ -6,9 +6,10 @@ import QuestionModal from './QuestionModal';
 const QuestionPreview = React.createClass({
   runShowModal: function() {
     this.props.showModal(this.props.clue);
-    // console.log(this);
   },
   render: function(){
+    if ()
+    // ask if the clue has been viewed and return the right li based on that
     return (
       <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">${this.props.clue.value}</li>
     );
