@@ -21,6 +21,7 @@
     margin: 3% auto;
     padding: 3%;
     font-size: 2rem;
+    line-height: 1.2em;
   }
   .input-answer {
     padding: 3%;
@@ -29,5 +30,20 @@
     margin: 0 auto;
     margin-top: 10%;
     font-size: 1rem;
+    border-radius: 2px;
+  }
+  .submit-btn {
+    border: none;
+    padding: 3%;
+    background: #FFF;
+    color: #1506A1;
+    border: solid #1506A1 1px;
+    border-radius: 2px;
+    font-size: 1rem;
+    &:hover {
+      background: #1506A1;
+      color: #FFF;
+      border: solid #FFF 1px;
+    }
   }
 }

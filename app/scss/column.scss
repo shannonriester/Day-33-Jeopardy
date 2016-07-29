@@ -2,18 +2,18 @@
   // margin: 0;
   width: calc(100vw/6);
   float: left;
-  margin-top: 5%;
+  margin-top: 2%;
   text-align: center;
   // background: red;
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 100;
     padding: 0;
-    margin: 2rem 0;
+    margin: 0;
     color: #FFF;
     display: inline-flex;
-    height: 10vh;
-    width: 15vw;
+    height: 15vh;
+    width: 95%;
     align-items: center;
     justify-content: center;
   }
@@ -26,16 +26,20 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    color: #FDDB6D;
+    color: #FED75E;
+    // background: #FFF;
     li {
-      background: url('../assets/Jeopardy.jpg');
-      background-repeat: no-repeat;
-      background-size: 100vh;
+      // background: url('../assets/Jeopardy.jpg');
+      // background-repeat: no-repeat;
+      // background-size: 100vh;
+      font-size: 2.7rem;
+      // background: #290CA2;
+      background: transparentize(#1573D7, .5);;
       list-style-type: none;
       border: 2px solid white;
-      border-radius: 2px;
-      padding: 15%;
-      margin: 10% 0%;
+      border-radius: 5px;
+      padding: 10%;
+      margin: 10% 2%;
     }
   }
 }
