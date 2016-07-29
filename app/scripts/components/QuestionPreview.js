@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Router, Route, hashHistory} from 'react-router';
 
 import store from '../store';
 import QuestionModal from './QuestionModal';
@@ -10,7 +9,7 @@ const QuestionPreview = React.createClass({
   },
   render: function(){
     return (
-      <li className="q-previews" onClick={this.runShowModal}>${this.props.clue.value}</li>
+      <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">${this.props.clue.value}</li>
     );
   }
 });

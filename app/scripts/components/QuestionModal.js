@@ -4,20 +4,24 @@ import $ from 'jquery';
 import store from '../store';
 
 const QuestionModal = React.createClass({
+  // getInitialState: function() {
+  //   return {
+  //     item : true
+  //   }
+  // },
   submitAnswer: function(e){
     e.preventDefault();
     let userAnswer = this.refs.useranswer.value.toLowerCase();
     let jeopardyAnswer = this.props.clue.answer.toLowerCase();
-
     if (userAnswer === this.props.clue.answer) {
       console.log('you got the answer right!');
     } else {
       console.log('wrong answer...');
     }
-    console.log('jeopardyAnswer ', jeopardyAnswer);
-    console.log('userAnswer ', userAnswer);
+    // console.log('jeopardyAnswer ', jeopardyAnswer);
+    // console.log('userAnswer ', userAnswer);
     this.props.hideModal();
-    // console.log(this);
+    this.props.removePreview(this);
   },
   render: function(){
     console.log('ANSWER ', this.props.clue.answer);

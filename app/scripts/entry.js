@@ -6,7 +6,9 @@ import Gameboard from './components/Gameboard';
 
 const router = (
  <Router history={hashHistory}>
-    <Route path="/home" component={Gameboard}/>
+    <Route path="/" component={Gameboard}>
+      <Route path="/home" component={Gameboard}/>
+    </Route>
   </Router>
 );
 

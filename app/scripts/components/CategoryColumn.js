@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 import QuestionPreview from './QuestionPreview';
 import QuestionModal from './QuestionModal';
@@ -15,12 +16,19 @@ const CategoryColumn = React.createClass({
   },
   hideModal: function(){
     this.setState({showModal : false});
+    // this.removePreview();
   },
-
+  removePreview: function(item){
+    console.log('item ',item);
+    console.log('this ', this);
+    item.props.clue.value = '';
+    // item.setState({item:false});
+    // console.log(this.props.clue.setState({clue:null}));
+  },
   render: function(){
     let questionModal;
     if (this.state.showModal) {
-      questionModal = <QuestionModal hideModal={this.hideModal} clue={this.state.clue}/>;
+      questionModal = <QuestionModal hideModal={this.hideModal} removePreview={this.removePreview} clue={this.state.clue}/>;
     }
     if (!this.props.clues) {
       return null;
