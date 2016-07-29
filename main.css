@@ -1,6 +1,6 @@
 #game-container::after {
   content: ' ';
-  background: url("../assets/Jeopardy-Logo.jpg");
+  background: #290CA2;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -23,58 +23,76 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20% 0 0;
+  padding: 5% 0 0;
   background: rgba(0, 0, 0, 0.7); }
   .modal-container .modal {
-    height: 75%;
-    width: 80%;
+    height: 0;
+    width: 0; }
+  .modal-container .modal {
+    transition: 1s;
+    transition-delay: .5s;
+    height: 50vh;
+    width: 60vw;
     margin: 0 auto;
-    background: #EDEFED;
-    overflow: scroll; }
+    background: #EDEFED; }
   .modal-container h2 {
     color: #1506A1;
     display: block;
     text-align: center;
     max-width: 40rem;
-    margin: 3% auto;
+    margin: 5% auto;
     padding: 3%;
     font-size: 2rem;
     line-height: 1.2em; }
   .modal-container .input-answer {
-    padding: 3%;
+    padding: 2%;
     border: none;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
-    margin-top: 10%;
+    /* margin-top: 0%; */
     font-size: 1rem;
     border-radius: 2px; }
   .modal-container .submit-btn {
     border: none;
-    padding: 3%;
+    padding: 2%;
     background: #FFF;
     color: #1506A1;
     border: solid #1506A1 1px;
     border-radius: 2px;
     font-size: 1rem; }
     .modal-container .submit-btn:hover {
+      transition: .5s;
       background: #1506A1;
       color: #FFF;
-      border: solid #FFF 1px; }
+      border: solid #FFF 1px;
+      border-radius: 3px; }
+  .modal-container .pass-btn {
+    border: none;
+    color: #E00007;
+    display: block;
+    margin: 5% auto;
+    font-size: 1rem;
+    background: none; }
+    .modal-container .pass-btn:hover {
+      transition: .5s;
+      border: solid #FFF 1px;
+      border-radius: 3px;
+      background: #E00007;
+      color: #FFF; }
 
 .column-container {
   width: calc(100vw/6);
   float: left;
-  margin-top: 2%;
   text-align: center; }
   .column-container h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 100;
     padding: 0;
     margin: 0;
     color: #FFF;
     display: inline-flex;
-    height: 15vh;
-    width: 95%;
+    min-height: 5vh;
+    max-height: 15vh;
     align-items: center;
     justify-content: center; }
   .column-container ul {
@@ -83,13 +101,15 @@
     text-align: center;
     color: #FED75E; }
     .column-container ul li {
-      font-size: 2.7rem;
-      background: rgba(21, 115, 215, 0.5);
+      font-size: 2.4rem;
+      background: rgba(21, 115, 215, 0.35);
       list-style-type: none;
       border: 2px solid white;
       border-radius: 5px;
-      padding: 10%;
-      margin: 10% 2%; }
+      padding: 10% 0%;
+      margin: 5% 10%; }
+      .column-container ul li:hover {
+        background: rgba(21, 115, 215, 0.6); }
 
 body {
   font-family: sans-serif;
