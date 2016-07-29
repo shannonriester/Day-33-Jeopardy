@@ -7,7 +7,8 @@ const Session = Backbone.Model.extend({
   idAttribute: '',
   urlRoot: `https://console.kinvey.com/environments/${store.settings.appKey}/login`,
   defaults: {
-    username: ''
+    username: '',
+    score: 0
   },
   // if (store.session.username) {
   //   console.log(store.session.username);

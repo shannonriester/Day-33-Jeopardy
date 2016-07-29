@@ -50,7 +50,7 @@ const Header = React.createClass({
       return (
         <div>
           <header>
-            <input className="newGameBtn" type="button" value="New Game" onClick={this.runNewGame}/>
+            <input className="newGameBtn animated infinite bounce" type="button" value="New Game" onClick={this.runNewGame}/>
             <input className="homeBtn" type="button" value="Home" onClick={this.routeToCurrentGame}/>
             <input className="logoutBtn" type="button" value="Logout" onClick={this.runLogout}/>
           </header>

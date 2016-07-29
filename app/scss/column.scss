@@ -33,6 +33,7 @@
       padding: 10% 0%;
       margin: 5% 10%;
       &:hover {
+        transition: .5s;
         background: transparentize(#1573D7, .4);
       }
     }

@@ -1,0 +1,24 @@
+header {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  input {
+    float: right;
+    border: none;
+    padding: 5px;
+    color: #FFF;
+    background: transparent;
+    border: solid transparent 1px;
+    margin: 1% 2%;
+    font-size: 1rem;
+    &:hover {
+      transition: .5s;
+      background: #B1D7FE;
+      color: #FFF;
+      border: solid #FFF 1px;
+      border-radius: 5px;
+    }
+  }
+}

@@ -6,6 +6,7 @@ const store = {
     password: '',
   },
   categories: new CategoriesCollection(),
+  // score: new Score(),
   settings: {
     baseUrl: 'https://baas.kinvey.com',
     appKey: 'kid_rkjTLZY_',
