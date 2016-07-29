@@ -9,8 +9,6 @@
   left: 0;
   right: 0;
   opacity: 0.7;
-  height: 100vh;
-  width: 100vw;
   z-index: -1;
   background-position: center center; }
 
@@ -40,51 +38,63 @@
     max-width: 40rem;
     margin: 3% auto;
     padding: 3%;
-    font-size: 2rem; }
+    font-size: 2rem;
+    line-height: 1.2em; }
   .modal-container .input-answer {
     padding: 3%;
     border: none;
     width: 70%;
     margin: 0 auto;
     margin-top: 10%;
+    font-size: 1rem;
+    border-radius: 2px; }
+  .modal-container .submit-btn {
+    border: none;
+    padding: 3%;
+    background: #FFF;
+    color: #1506A1;
+    border: solid #1506A1 1px;
+    border-radius: 2px;
     font-size: 1rem; }
+    .modal-container .submit-btn:hover {
+      background: #1506A1;
+      color: #FFF;
+      border: solid #FFF 1px; }
 
 .column-container {
   width: calc(100vw/6);
   float: left;
-  margin-top: 5%;
+  margin-top: 2%;
   text-align: center; }
   .column-container h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 100;
     padding: 0;
-    margin: 2rem 0;
+    margin: 0;
     color: #FFF;
     display: inline-flex;
-    height: 10vh;
-    width: 15vw;
+    height: 15vh;
+    width: 95%;
     align-items: center;
     justify-content: center; }
   .column-container ul {
     margin: 0;
     padding: 0;
     text-align: center;
-    color: #FDDB6D; }
+    color: #FED75E; }
     .column-container ul li {
-      background: url("../assets/Jeopardy.jpg");
-      background-repeat: no-repeat;
-      background-size: 100vh;
+      font-size: 2.7rem;
+      background: rgba(21, 115, 215, 0.5);
       list-style-type: none;
       border: 2px solid white;
-      border-radius: 2px;
-      padding: 15%;
-      margin: 10% 0%; }
+      border-radius: 5px;
+      padding: 10%;
+      margin: 10% 2%; }
 
 body {
   font-family: sans-serif;
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.5rem; }
+  font-size: 3rem; }
   body footer {
     text-align: center;
     color: #FFF;
