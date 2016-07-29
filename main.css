@@ -1,6 +1,6 @@
 #game-container::after {
   content: ' ';
-  background: url("../assets/Jeopardy.jpg");
+  background: url("../assets/Jeopardy-Logo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -8,21 +8,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0.4;
+  opacity: 0.7;
   height: 100vh;
   width: 100vw;
   z-index: -1;
   background-position: center center; }
 
-.gameboard {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw; }
-  .gameboard::after {
-    content: ' ';
-    clear: both;
-    display: block; }
+.gameboard::after {
+  content: ' ';
+  clear: both;
+  display: block; }
 
 .modal-container {
   position: fixed;
@@ -31,25 +26,68 @@
   left: 0;
   right: 0;
   padding: 20% 0 0;
-  background: rgba(0, 0, 0, 0.6); }
-
-.modal {
-  height: 75%;
-  width: 80%;
-  margin: 0 auto;
-  background: #EDEFED;
-  overflow: scroll; }
+  background: rgba(0, 0, 0, 0.7); }
+  .modal-container .modal {
+    height: 75%;
+    width: 80%;
+    margin: 0 auto;
+    background: #EDEFED;
+    overflow: scroll; }
+  .modal-container h2 {
+    color: #1506A1;
+    display: block;
+    text-align: center;
+    max-width: 40rem;
+    margin: 3% auto;
+    padding: 3%;
+    font-size: 2rem; }
+  .modal-container .input-answer {
+    padding: 3%;
+    border: none;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10%;
+    font-size: 1rem; }
 
 .column-container {
-  margin: 0;
   width: calc(100vw/6);
-  float: left; }
+  float: left;
+  margin-top: 5%;
+  text-align: center; }
   .column-container h3 {
+    font-size: 1.3rem;
+    font-weight: 100;
     padding: 0;
-    margin: 0; }
+    margin: 2rem 0;
+    color: #FFF;
+    display: inline-flex;
+    height: 10vh;
+    width: 15vw;
+    align-items: center;
+    justify-content: center; }
+  .column-container ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #FDDB6D; }
+    .column-container ul li {
+      background: url("../assets/Jeopardy.jpg");
+      background-repeat: no-repeat;
+      background-size: 100vh;
+      list-style-type: none;
+      border: 2px solid white;
+      border-radius: 2px;
+      padding: 15%;
+      margin: 10% 0%; }
 
 body {
   font-family: sans-serif;
-  margin: 0; }
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.5rem; }
+  body footer {
+    text-align: center;
+    color: #FFF;
+    margin: 0; }
 
 /*# sourceMappingURL=main.css.map */
