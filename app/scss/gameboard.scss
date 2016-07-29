@@ -1,7 +1,8 @@
 #game-container {
   &::after{
     content: ' ';
-    background: url('../assets/Jeopardy-Logo.jpg');
+    // background: url('../assets/Jeopardy-Logo.jpg');
+    background: #290CA2;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;

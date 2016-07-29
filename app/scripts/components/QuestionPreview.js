@@ -6,6 +6,7 @@ import QuestionModal from './QuestionModal';
 const QuestionPreview = React.createClass({
   runShowModal: function() {
     this.props.showModal(this.props.clue);
+    // console.log(this);
   },
   render: function(){
     return (

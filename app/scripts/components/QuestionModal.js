@@ -31,6 +31,7 @@ const QuestionModal = React.createClass({
           <h2>{this.props.clue.question}</h2>
           <input className="input-answer" type="text" placeholder="type in your answer..." ref="useranswer"/>
           <input className="submit-btn" type="submit" value="submit answer" onClick={this.submitAnswer} />
+          <input className="pass-btn" type="button" value="pass" onClick={this.submitAnswer} />
         </form>
       </div>
     );

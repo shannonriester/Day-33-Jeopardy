@@ -1,17 +1,19 @@
-// import React from 'react';
-// import {Router, Route, hashHistory} from 'react-router';
-//
-// import Gameboard from './components/Nav';
-//
-// const App = React.createClass({
-//
-//   render: function(){
-//     return (
-//         <Gameboard>
-//           <Category />
-//         </Gameboard>
-//     );
-//   }
-// });
-//
-// export default App;
+import React from 'react';
+import {Router, Route, hashHistory} from 'react-router';
+
+import Gameboard from './Gameboard';
+import Header from './Header';
+
+const App = React.createClass({
+
+  render: function(){
+    return (
+      <div>
+        <Header/>
+       {this.props.children}
+      </div>
+    );
+  }
+});
+
+export default App;
