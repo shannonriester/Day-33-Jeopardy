@@ -20,13 +20,13 @@ const QuestionModal = React.createClass({
     // console.log(this);
   },
   render: function(){
+    console.log('ANSWER ', this.props.clue.answer);
     return (
       <div className="modal-container">
         <form className="modal" onSubmit={this.submitAnswer}>
-          <h3>{this.props.clue.question}</h3>
+          <h2>{this.props.clue.question}</h2>
           <input className="input-answer" type="text" placeholder="type in your answer..." ref="useranswer"/>
           <input className="submit-btn" type="submit" value="submit answer" onClick={this.submitAnswer} />
-          <p className="answer">Answer: {this.props.clue.answer}</p>
         </form>
       </div>
     );

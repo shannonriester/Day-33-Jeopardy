@@ -31,7 +31,10 @@ const Gamebaord = React.createClass({
       return <CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />;
       });
     return (
-      <div id="game-container"><div className="gamebaord">{categoriesArr}</div></div>
+      <div id="game-container">
+        <div className="gameboard">{categoriesArr}</div>
+        <footer>$0</footer>
+      </div>
     );
   }
 });

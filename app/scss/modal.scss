@@ -5,13 +5,29 @@
   left: 0;
   right: 0;
   padding: 20% 0 0;
-  background: rgba(0, 0, 0,.6);
-}
-
-.modal {
-  height: 75%;
-  width: 80%;
-  margin: 0 auto;
-  background: #EDEFED;
-  overflow: scroll;
+  background: rgba(0, 0, 0,.7);
+  .modal {
+    height: 75%;
+    width: 80%;
+    margin: 0 auto;
+    background: #EDEFED;
+    overflow: scroll;
+  }
+  h2 {
+    color: #1506A1;
+    display: block;
+    text-align: center;
+    max-width: 40rem;
+    margin: 3% auto;
+    padding: 3%;
+    font-size: 2rem;
+  }
+  .input-answer {
+    padding: 3%;
+    border: none;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10%;
+    font-size: 1rem;
+  }
 }

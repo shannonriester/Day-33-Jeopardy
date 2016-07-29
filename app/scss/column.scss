@@ -1,9 +1,41 @@
 .column-container {
-  margin: 0;
+  // margin: 0;
   width: calc(100vw/6);
   float: left;
+  margin-top: 5%;
+  text-align: center;
+  // background: red;
   h3 {
+    font-size: 1.3rem;
+    font-weight: 100;
     padding: 0;
+    margin: 2rem 0;
+    color: #FFF;
+    display: inline-flex;
+    height: 10vh;
+    width: 15vw;
+    align-items: center;
+    justify-content: center;
+  }
+  // .ul-container{
+  //   background: url('../assets/Jeopardy.jpg');
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+  // }
+  ul {
     margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #FDDB6D;
+    li {
+      background: url('../assets/Jeopardy.jpg');
+      background-repeat: no-repeat;
+      background-size: 100vh;
+      list-style-type: none;
+      border: 2px solid white;
+      border-radius: 2px;
+      padding: 15%;
+      margin: 10% 0%;
+    }
   }
 }
