@@ -17,16 +17,13 @@ const CategoryColumn = React.createClass({
   },
   hideModal: function(){
     this.setState({showModal : false});
-    // this.removePreview();
   },
   removePreview: function(item){
-    console.log('item ',item);
-    console.log('this ', this);
-    store.categories.wasViewed(item);
-    // reach to store.categories and change a particular question to be 'wasViewed', and make sure that fires a change event so everything is updated (this.trigger('change');)
-    // item.props.clue.value = '';
-    // item.setState({item:false});
-    // console.log(this.props.clue.setState({clue:null}));
+    console.log('item ', item);
+    // store.categories.wasViewed(item);
+    console.log(store.categories.get(this));
+    store.categories.trigger('change');
+    // reach to store.categories and change a particular question to be 'wasViewed', and make sure that fires a change event so everything is updated (this.trigger('change'))
   },
   render: function(){
     let questionModal;

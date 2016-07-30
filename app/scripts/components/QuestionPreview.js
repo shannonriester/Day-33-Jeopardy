@@ -8,15 +8,16 @@ const QuestionPreview = React.createClass({
     this.props.showModal(this.props.clue);
   },
   render: function(){
-    if (store.score.wasViewed(this.props.clue)) {
+    // console.log(this.props);
+    // if (this.props.wasViewed()) {
       return (
-        <li className="q-previews" ref="questionPreview">${this.props.clue.value}</li>
+        <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">$test</li>
       );
-    } else {
-      return (
-        <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">${this.props.clue.value}</li>
-      );
-    }
+    // } else {
+    //   return (
+    //     <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">${this.props.clue.value}</li>
+    //   );
+    // }
     // ask if the clue has been viewed and return the right li based on that
   }
 });
