@@ -19,7 +19,7 @@ const QuestionModal = React.createClass({
     console.log('userAnswer ', userAnswer);
     // console.log('this', this);
     this.props.hideModal();
-    this.props.removePreview(this);
+    // this.props.removePreview(this);
 
     // this.props.removePreview(this.props.clue);
   },

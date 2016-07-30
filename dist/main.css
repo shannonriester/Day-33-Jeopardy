@@ -127,6 +127,9 @@ header input {
       .column-container ul li:hover {
         transition: .5s;
         background: rgba(21, 115, 215, 0.6); }
+    .column-container ul .wasViewed {
+      color: red;
+      text-decoration: line-through; }
 
 body {
   font-family: sans-serif;

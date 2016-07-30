@@ -37,5 +37,9 @@
         background: transparentize(#1573D7, .4);
       }
     }
+    .wasViewed {
+      color: red;
+      text-decoration: line-through;
+    }
   }
 }
