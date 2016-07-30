@@ -30,10 +30,11 @@ const CategoryModel = Backbone.Model.extend({
     });
   },
   wasViewed: function(item){
-    console.log(item);
+    console.log(item.props.clue);
+    let viewdArr = [];
     console.log('you\'re running the wasViewed() function!');
-    // item.trigger('change');
-  }
+    item.trigger('change');
+  },
 });
 
 export default CategoryModel;

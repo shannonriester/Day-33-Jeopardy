@@ -9,16 +9,16 @@ const QuestionPreview = React.createClass({
   },
   render: function(){
     // console.log(this.props);
-    // if (this.props.wasViewed()) {
+    if (this.props.wasViewed) {
       return (
-        <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">$test</li>
+        <li className="q-previews" ref="questionPreview"></li>
       );
-    // } else {
-    //   return (
-    //     <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">${this.props.clue.value}</li>
-    //   );
-    // }
-    // ask if the clue has been viewed and return the right li based on that
+    } else {
+      return (
+        <li className="q-previews" onClick={this.runShowModal} ref="questionPreview">${this.props.clue.value}</li>
+      );
+    }
+    //ask if the clue has been viewed and return the right li based on that
   }
 });
 
