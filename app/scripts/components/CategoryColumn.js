@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 
+import store from '../store';
 import QuestionPreview from './QuestionPreview';
 import QuestionModal from './QuestionModal';
 
@@ -21,7 +22,8 @@ const CategoryColumn = React.createClass({
   removePreview: function(item){
     console.log('item ',item);
     console.log('this ', this);
-    // reach to store.categories and change a particular question to be 'wasViewed', and make sure that fires a change event so everythign is updated (this.trigger('change');)
+    store.categories.wasViewed(item);
+    // reach to store.categories and change a particular question to be 'wasViewed', and make sure that fires a change event so everything is updated (this.trigger('change');)
     // item.props.clue.value = '';
     // item.setState({item:false});
     // console.log(this.props.clue.setState({clue:null}));

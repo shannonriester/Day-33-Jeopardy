@@ -35,6 +35,5 @@ const Session = Backbone.Model.extend({
 });
 
 let session = new Session();
-console.log(session);
 
 export default session;
