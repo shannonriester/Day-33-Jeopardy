@@ -20,9 +20,12 @@ const CategoryColumn = React.createClass({
   },
   removePreview: function(item){
     console.log('item ', item);
-    wasViewed(item);
-    // console.log(store.categories.get(item));
-      console.log(store.categories);
+    // store.categories.wasViewed(item);
+    console.log(this.props.clues);
+    // console.log(store.categories.get(this.props.clues).get());
+    // .get('item.props.clue.id').wasViewed;
+
+      // console.log(store.categories.get('item'));
     // console.log(store.categories.get());
     store.categories.trigger('change');
     // reach to store.categories and change a particular question to be 'wasViewed', and make sure that fires a change event so everything is updated (this.trigger('change'))
@@ -36,7 +39,7 @@ const CategoryColumn = React.createClass({
       return null;
     }
     let cluesObj = this.props.clues.map((clue,i) => {
-      return (<QuestionPreview showModal={this.showModal} wasViewed={this.wasViewed} key={i} clue={clue} />);
+      return (<QuestionPreview showModal={this.showModal} key={i} clue={clue} />);
     });
     return (
       <div className="column-container">
