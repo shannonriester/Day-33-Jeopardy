@@ -5,13 +5,13 @@ import store from '../store';
 
 const Session = Backbone.Model.extend({
   idAttribute: '',
-  urlRoot: `https://console.kinvey.com/environments/${store.settings.appKey}/login`,
+  urlRoot: `https://console.kinvey.com/environments/${`kid_rkjTLZY_`}/login`,
   defaults: {
     username: '',
     score: 0
   },
   // if (store.session.username) {
-  //   console.log(store.session.username);
+  //   console.log('USERNAME: ', store.session.username);
   // }
   parse: function(response){
     if (response) {

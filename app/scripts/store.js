@@ -1,11 +1,8 @@
 import CategoriesCollection from './collections/CategoriesCollection';
 import Score from './models/Score';
+import session from './models/Session';
 
 const store = {
-  session: {
-    username: 'Shanni',
-    password: '',
-  },
   categories: new CategoriesCollection(),
   score: new Score(),
   settings: {

@@ -7,7 +7,7 @@ import QuestionModal from './QuestionModal';
 
 const CategoryColumn = React.createClass({
   getInitialState: function(){
-    return {showModal : false}
+    return {showModal : false};
   },
   showModal: function(clue){
     this.setState({
@@ -26,9 +26,11 @@ const CategoryColumn = React.createClass({
     if (!this.props.clues) {
       return null;
     }
+
     let cluesObj = this.props.clues.map((clue,i) => {
       return (<QuestionPreview showModal={this.showModal} key={i} clue={clue} />);
     });
+
     return (
       <div className="column-container">
         <h3>{this.props.title}</h3>

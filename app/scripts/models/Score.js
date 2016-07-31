@@ -5,23 +5,28 @@ import store from '../store';
 
 const Score = Backbone.Model.extend({
   defaults: {
-    correct: 0,
-    incorrect: 0,
+    answer: '',
     winnings: 0
   },
   correctAnswer: function(clue){
-    console.log(this);
+    console.log('RIGHT ON! CORRECT ANSWER');
+
+    let answer = clue.answer;
     let newScore = clue.value + this.get('winnings');
-    console.log(newScore);
+
     this.set('winnings', newScore);
+    this.set('answer', answer);
+
     this.trigger('change');
-    // store.categories.trigger('change');
-    //make sure to listen to this happening
   },
   wrongAnswer: function(clue){
-    // console.log('WRONG ANSWER. THE ANSWER IS: ', this.props.clue.answer);
+    console.log('WRONG ANSWER.');
+    let answer = clue.answer;
     let newScore = this.get('winnings') - clue.value;
+
     this.set('winnings', newScore);
+    this.set('answer', answer);
+
     this.trigger('change');
   }
 });
