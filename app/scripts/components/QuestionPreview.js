@@ -9,7 +9,7 @@ const QuestionPreview = React.createClass({
   },
   componentDidMount: function(){
     store.categories.on('change', () => {
-      this.setState({wasViewed: store.categories.get('wasViewed')})
+      this.setState({wasViewed: store.categories.get('wasViewed')});
     });
   },
   runShowModal: function() {

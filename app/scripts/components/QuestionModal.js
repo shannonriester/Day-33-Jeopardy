@@ -6,15 +6,21 @@ import store from '../store';
 const QuestionModal = React.createClass({
   submitAnswer: function(e){
     e.preventDefault();
-    let userAnswer = this.refs.useranswer.value.toLowerCase();
-    let jeopardyAnswer = this.props.clue.answer.toLowerCase();
-    if (userAnswer === this.props.clue.answer) {
-      console.log('you got the answer right!');
+    let userAnswer = this.refs.useranswer.value;
+      userAnswer.toLowerCase().trim();
+    let jeopardyAnswer = this.props.clue.answer;
+      jeopardyAnswer.toLowerCase().trim();
+
+    if (userAnswer == this.props.clue.answer) {
+      console.log('RIGHT ON! RIGHT ANSWER: ', jeopardyAnswer);
       store.score.correctAnswer(this.props.clue);
+      let score = store.score.get('score');
+
     } else {
       console.log('wrong answer...');
       store.score.wrongAnswer(this.props.clue);
     }
+
     console.log('jeopardyAnswer ', jeopardyAnswer);
     console.log('userAnswer ', userAnswer);
     // console.log('this', this);

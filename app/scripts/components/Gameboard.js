@@ -3,7 +3,7 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 
 import CategoryColumn from './CategoryColumn';
-import session from '../models/Session';
+// import session from '../models/Session';
 import store from '../store';
 
 const Gamebaord = React.createClass({
@@ -19,6 +19,12 @@ const Gamebaord = React.createClass({
     });
 
     store.categories.makeNewGame();
+
+    store.score.on('change', () => {
+      console.log('SCORE CHANGED');
+      this.setState({score : store.score.get('winnings')});
+    });
+
   },
   render: function(){
     let categoriesArr = this.state.categories.map((catObj, i, arr) => {
@@ -28,7 +34,7 @@ const Gamebaord = React.createClass({
     return (
       <div id="game-container">
         <div className="gameboard">{categoriesArr}</div>
-        <footer>$0</footer>
+        <footer>${this.state.score}</footer>
       </div>
     );
   }

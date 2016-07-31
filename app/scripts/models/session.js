@@ -1,7 +1,7 @@
 import Backbone from 'backbone';
 import router from '../entry';
-import store from '../store';
 
+import store from '../store';
 
 const Session = Backbone.Model.extend({
   idAttribute: '',

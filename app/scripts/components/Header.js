@@ -9,8 +9,8 @@ import session from '../models/session';
 
 const Header = React.createClass({
   runNewGame: function(){
-    // console.log(Gameboard);
     store.categories.reset();
+    // store.score.reset();
     store.categories.makeNewGame();
     //'coll.reset([models], [options])' collection
       // removes current data
