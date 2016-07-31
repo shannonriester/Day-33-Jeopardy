@@ -3,12 +3,14 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 
 import CategoryColumn from './CategoryColumn';
+import session from '../models/Session';
 import store from '../store';
 
 const Gamebaord = React.createClass({
   getInitialState: function(){
     return {
-      categories: store.categories.toJSON()
+      categories: store.categories.toJSON(),
+      score: 0
     }
   },
   componentDidMount: function(){
