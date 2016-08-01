@@ -38,7 +38,6 @@ const Gamebaord = React.createClass({
         <footer>
           <div className="game-score">${this.state.score}</div>
           <div className="game-answer">"{this.state.answer}"</div>
-
         </footer>
       </div>
     );

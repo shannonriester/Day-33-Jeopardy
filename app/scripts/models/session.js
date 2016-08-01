@@ -3,6 +3,7 @@ import $ from 'jquery';
 import router from '../entry';
 
 import store from '../store';
+import Header from '../components/Header';
 
 const Session = Backbone.Model.extend({
   idAttribute: '_id',
@@ -28,26 +29,37 @@ const Session = Backbone.Model.extend({
       {
       success: (model, response) => {
         console.log('USER SIGNED IN');
+        console.log('username ', username);
         localStorage.authtoken = response._kmd.authtoken;
         this.unset('password');
-        
+        this.trigger('change');
       },
       error: function(model, response) {
-        console.log('ERROR: Login failed');
+        console.log('ERROR: Login Failed');
       }
     });
-
-    // this.save(
-    //   {username:username, password:password},
-    //   {
-    //     success: (model, response) => {
-    //     this.unset('password');
-    //     localStorage.setItem('authtoken', response._kmd.authtoken);
-    //   },
-    //     error: () => {
-    //       console.log('ERROR. Login Failed.');
-    //   }
-    // });
+  },
+  signup: function(username, password) {
+    store.session.save({
+      username: username,
+      password: password,
+    },
+    {
+      url: `https://baas.kinvey.com/user/${store.settings.appKey}/`,
+      success: (model, response) => {
+        model.unset('password');
+        localStorage.authtoken = response._kmd.authtoken;
+        this.trigger('change')
+      },
+      error: function(model, response) {
+        console.log('ERROR: Sign Up Failed');
+      }
+    })
+  },
+  logout: function(){
+    localStorage.removeItem('authtoken');
+    this.clear();
+    this.trigger('change')
   },
   retrieve: function(){},
 });

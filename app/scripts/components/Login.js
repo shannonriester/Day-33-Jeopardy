@@ -11,16 +11,17 @@ const Login = React.createClass({
     let password = this.refs.password.value;
 
     session.login(username, password);
-    
+    this.props.hideLogin();
+    // console.log(this.props);
   },
   render: function() {
     return (
-      <div className="modal-container">
+      <div className="modal-container login-modal">
         <form className="modal" onSubmit={this.loginFunction}>
           <input ref="username" type="text" placeholder="username"/>
           <input ref="password" type="password" placeholder="password"/>
-          <input id="login-submit" type="submit" value="enter" onClick={this.loginFunction}/>
-          <input className="login-cancel" type="button" value="cancel" onClick={this.props.hideLogin} />
+          <input id="login-submit modalSubmitBtn" type="submit" value="enter" onClick={this.loginFunction}/>
+          <input className="login-cancel modalCancelBtn" type="button" value="cancel" onClick={this.props.hideLogin} />
         </form>
       </div>
     );
