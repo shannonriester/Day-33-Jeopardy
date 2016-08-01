@@ -107,8 +107,7 @@ header input {
     margin: 0;
     color: #FFF;
     display: inline-flex;
-    min-height: 5vh;
-    max-height: 15vh;
+    height: 15vh;
     align-items: center;
     justify-content: center; }
   .column-container ul {
@@ -117,13 +116,15 @@ header input {
     text-align: center;
     color: #FED75E; }
     .column-container ul li {
-      font-size: 2.4rem;
+      font-size: 85%;
+      overflow: scroll;
       background: rgba(21, 115, 215, 0.35);
       list-style-type: none;
       border: 2px solid white;
       border-radius: 5px;
       padding: 10% 0%;
-      margin: 5% 10%; }
+      margin: 5% 10%;
+      min-width: 3rem; }
       .column-container ul li:hover {
         transition: .5s;
         background: rgba(21, 115, 215, 0.6); }
