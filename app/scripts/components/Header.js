@@ -89,7 +89,6 @@ const Header = React.createClass({
               {newGameBtn}
               <button className="logoutBtn" onClick={this.runLogout}>Logout</button>
           </header>
-
         </div>
       );
     }

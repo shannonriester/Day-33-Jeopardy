@@ -33,7 +33,15 @@ const CategoryModel = Backbone.Model.extend({
     // console.log(item.props.clue);
     // let viewdArr = [];
     // this.set({'wasViewed', true});
-    console.log('you\'re running the wasViewed() function!');
+    // console.log('you\'re running the wasViewed() function!');
+    item.trigger('change');
+  },
+  answeredCorrect: function(item){
+    item.removeClass('wrongAnswer');
+    item.trigger('change');
+  },
+  answeredWrong: function(item){
+    item.removeClass('correctAnswer');
     item.trigger('change');
   },
 });

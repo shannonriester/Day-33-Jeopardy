@@ -1,4 +1,5 @@
 import Backbone from 'backbone';
+import $ from 'jquery';
 
 import store from '../store';
 // import session from './Session';
@@ -10,6 +11,8 @@ const Score = Backbone.Model.extend({
   },
   correctAnswer: function(clue){
     console.log('RIGHT ON! CORRECT ANSWER');
+    
+    // clue.addClass('correctAnswer');
 
     let answer = clue.answer;
     let newScore = clue.value + this.get('winnings');
@@ -21,6 +24,9 @@ const Score = Backbone.Model.extend({
   },
   wrongAnswer: function(clue){
     console.log('WRONG ANSWER.');
+
+    // $addClass('wrongAnswer');
+
     let answer = clue.answer;
     let newScore = this.get('winnings') - clue.value;
 

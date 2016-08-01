@@ -14,19 +14,19 @@ const QuestionModal = React.createClass({
       userAnswer.toLowerCase().trim();
     let jeopardyAnswer = this.props.clue.answer;
       jeopardyAnswer.toLowerCase().trim();
+      // if (jeopardyAnswer.indexOf('<i>'))
 
     if (userAnswer == this.props.clue.answer) {
       store.score.correctAnswer(this.props.clue);
+      // store.categories.answeredCorrect(this.props.clue);
     } else {
       store.score.wrongAnswer(this.props.clue);
+      // store.categories.answeredWrong(this.props.clue);
     }
 
     console.log('jeopardyAnswer ', jeopardyAnswer);
     console.log('userAnswer ', userAnswer);
-
-    // window.setTimeout(this.props.hideModal(), 2000);
     this.props.hideModal();
-
   },
   render: function(){
     console.log('ANSWER ', this.props.clue.answer);
