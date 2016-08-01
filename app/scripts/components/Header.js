@@ -32,7 +32,7 @@ const Header = React.createClass({
     this.setState({showLogin:true});
   },
   hideLogin: function(e){
-    // this.setState({showLogin:false});
+    this.setState({showLogin:false});
   },
   // routeToSignup: function(e){
   //   e.preventDefault();

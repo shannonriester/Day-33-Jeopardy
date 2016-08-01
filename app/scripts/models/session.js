@@ -1,15 +1,17 @@
 import Backbone from 'backbone';
+import $ from 'jquery';
 import router from '../entry';
 
 import store from '../store';
 
 const Session = Backbone.Model.extend({
-  idAttribute: '',
-  urlRoot: `https://console.kinvey.com/environments/${`kid_rkjTLZY_`}/login`,
+  idAttribute: '_id',
+  urlRoot: `https://baas.kinvey.com/user/kid_rkjTLZY_/login`,
   defaults: {
     username: '',
     score: 0
   },
+
   // if (store.session.username) {
   //   console.log('USERNAME: ', store.session.username);
   // }
@@ -18,18 +20,34 @@ const Session = Backbone.Model.extend({
       return {
         username: response.username,
         response: response._Id,
-        authtoken: response.kmd.authtoken
+        authtoken: response._kmd.authtoken
       };
     }
   },
   login: function(username, password){
-    this.save({
+    this.save({username: username, password: password},
+      {
       success: (model, response) => {
+        console.log('USER SIGNED IN');
+        localStorage.authtoken = response._kmd.authtoken;
         this.unset('password');
-        localStorage.setItem('authtoken', response._kmd.authtoken);
-        router.push('/home');
+      },
+      error: function(model, response) {
+        console.log('ERROR: Login failed');
       }
-    })
+    });
+
+    // this.save(
+    //   {username:username, password:password},
+    //   {
+    //     success: (model, response) => {
+    //     this.unset('password');
+    //     localStorage.setItem('authtoken', response._kmd.authtoken);
+    //   },
+    //     error: () => {
+    //       console.log('ERROR. Login Failed.');
+    //   }
+    // });
   },
   retrieve: function(){},
 });
