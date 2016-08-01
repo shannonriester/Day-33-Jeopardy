@@ -4,7 +4,11 @@ header {
     display: block;
     clear: both;
   }
-  input {
+
+  h3 {
+    margin: none;
+  }
+  input, button {
     float: right;
     border: none;
     padding: 5px;
@@ -22,3 +26,4 @@ header {
     }
   }
 }
+  

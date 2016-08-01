@@ -1,0 +1,52 @@
+.signup-modal {
+  text-align: center;
+  // background:
+  .h3-signup {
+    margin: 0;
+    color: #FFF;
+    font-size: 2rem;
+  }
+  .signup-form {
+    text-align: center;
+    input {
+      padding: 2%;
+      border: none;
+      width: 50%;
+      margin: 0 auto;
+      /* margin-top: 0%; */
+      font-size: 1rem;
+      border-radius: 2px;
+    }
+    #singup-submit {
+      border: none;
+      padding: 2%;
+      background: #FFF;
+      color: #1506A1;
+      border: solid blue 1px;
+      border-radius: 2px;
+      font-size: 1rem;
+      &:hover {
+        transition: .5s;
+        background: #1506A1;
+        color: #FFF;
+        border: solid #FFF 1px;
+        border-radius: 3px;
+      }
+    }
+    .modalCancelBtn {
+      border: none;
+      color: #E00007;
+      display: block;
+      margin: 2% auto;
+      font-size: 1rem;
+      background: none;
+      &:hover {
+        transition: .5s;
+        border: solid #FFF 1px;
+        border-radius: 3px;
+        background: #E00007;
+        color: #FFF;
+      }
+    }
+  }
+}

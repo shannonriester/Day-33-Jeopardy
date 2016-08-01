@@ -40,12 +40,12 @@ const Session = Backbone.Model.extend({
     });
   },
   signup: function(username, password) {
-    store.session.save({
+    this.save({
       username: username,
       password: password,
     },
     {
-      url: `https://baas.kinvey.com/user/${store.settings.appKey}/`,
+      url: `https://baas.kinvey.com/user/kid_rkjTLZY_/`,
       success: (model, response) => {
         model.unset('password');
         localStorage.authtoken = response._kmd.authtoken;
