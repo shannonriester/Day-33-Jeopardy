@@ -11,6 +11,7 @@ const Login = React.createClass({
     let password = this.refs.password.value;
 
     session.login(username, password);
+    
   },
   render: function() {
     return (

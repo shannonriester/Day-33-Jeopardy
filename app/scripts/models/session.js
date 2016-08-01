@@ -11,7 +11,6 @@ const Session = Backbone.Model.extend({
     username: '',
     score: 0
   },
-
   // if (store.session.username) {
   //   console.log('USERNAME: ', store.session.username);
   // }
@@ -31,6 +30,7 @@ const Session = Backbone.Model.extend({
         console.log('USER SIGNED IN');
         localStorage.authtoken = response._kmd.authtoken;
         this.unset('password');
+        
       },
       error: function(model, response) {
         console.log('ERROR: Login failed');
