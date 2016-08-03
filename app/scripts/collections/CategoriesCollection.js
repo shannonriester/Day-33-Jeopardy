@@ -7,7 +7,8 @@ import CategoryModel from '../models/CategoryModel';
 const CategoriesCollection = Backbone.Collection.extend({
   model: CategoryModel,
   url: `http://jservice.io/api/category?id=4`,
-  makeNewGame: function(){
+  makeNewGame: function(gameState){
+    // console.log(gameState);
     this.reset();
 
     _(6).times(() => {

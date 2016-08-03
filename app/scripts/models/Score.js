@@ -11,7 +11,6 @@ const Score = Backbone.Model.extend({
   },
   correctAnswer: function(clue){
     console.log('RIGHT ON! CORRECT ANSWER');
-    
     // clue.addClass('correctAnswer');
 
     let answer = clue.answer;
