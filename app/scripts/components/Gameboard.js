@@ -17,7 +17,6 @@ const Gamebaord = React.createClass({
   componentDidMount: function(){
     store.categories.on('update change', () => {
       this.setState({categories: store.categories.toJSON()});
-
       //reset the answer section when you make a new game
       if (this.state.answer !== '') {
         this.setState({answer: ''});
@@ -25,8 +24,6 @@ const Gamebaord = React.createClass({
     });
 
       store.categories.makeNewGame();
-
-
 
     store.score.on('change', () => {
       this.setState({score : store.score.get('winnings')});

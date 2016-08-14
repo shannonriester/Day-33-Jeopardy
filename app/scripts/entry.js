@@ -30,7 +30,7 @@ $(document).ajaxSend(function(e, xhrAjax, jqueryAjax) {
   }
 })
 
-// if (sessionStorage.session){
-//   session.username = JSON.parse(sessionStorage.session).username;
-//   session.authtoken = JSON.parse(sessionStorage.session).authtoken;
-// }
+if (sessionStorage.session){
+  session.username = JSON.parse(sessionStorage.session).username;
+  session.authtoken = JSON.parse(sessionStorage.session).authtoken;
+}
