@@ -11,11 +11,11 @@ const QuestionModal = React.createClass({
     e.preventDefault();
 
     let userAnswer = this.refs.useranswer.value;
-      userAnswer.toLowerCase().trim();
+      userAnswer.toLowerCase();
     let jeopardyAnswer = this.props.clue.answer;
-      jeopardyAnswer.toLowerCase().trim();
+      jeopardyAnswer.toLowerCase();
 
-    if (userAnswer == this.props.clue.answer) {
+    if (userAnswer === jeopardyAnswer) {
       store.score.correctAnswer(this.props.clue);
       // store.categories.answeredCorrect(this.props.clue);
     } else {
