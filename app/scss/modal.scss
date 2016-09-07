@@ -7,17 +7,13 @@
   padding: 5% 0 0;
   background: rgba(0, 0, 0,.7);
   .modal {
-    // transition: 1s;
-    // transition-delay: .5s;
-    // display: block;
-    // transform-origin: top;
-    // transition:
-    height: 50vh;
-    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 40%;
     margin: 0 auto;
     background: #EDEFED;
-    padding: 10%;
-    // overflow: scroll;
   }
   h2 {
     color: #1506A1;
@@ -69,4 +65,25 @@
       color: #FFF;
     }
   }
+}
+
+.signup-form, .login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  height: 60%;
+  width: 50%;
+  background: #89BCF1;
+}
+
+.answer-reveal {
+  display: none;
+}
+
+.question-modal {
+  flex-direction: column;
+  height: 60%;
+  width: 60%;
 }

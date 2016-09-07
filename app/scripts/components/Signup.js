@@ -17,8 +17,8 @@ const Signup = React.createClass({
   render: function() {
     return (
       <div className="modal-container signup-modal">
-        <h3 className="h3-signup">Sign Up</h3>
         <form className="signup-form" onSubmit={this.signupFunction}>
+          <h3 className="h3-signup">Sign Up</h3>
           <input ref="username" type="text" placeholder="username"/>
           <input ref="password" type="password" placeholder="password"/>
           <input id="signup-submit modalSubmitBtn" type="submit" value="enter" onClick={this.signupFunction}/>

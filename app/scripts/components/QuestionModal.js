@@ -14,7 +14,6 @@ const QuestionModal = React.createClass({
       userAnswer.toLowerCase().trim();
     let jeopardyAnswer = this.props.clue.answer;
       jeopardyAnswer.toLowerCase().trim();
-      // if (jeopardyAnswer.indexOf('<i>'))
 
     if (userAnswer == this.props.clue.answer) {
       store.score.correctAnswer(this.props.clue);
@@ -32,7 +31,7 @@ const QuestionModal = React.createClass({
     console.log('ANSWER ', this.props.clue.answer);
     return (
       <div className="modal-container">
-        <form className="modal" onSubmit={this.submitAnswer}>
+        <form className="modal question-modal" onSubmit={this.submitAnswer}>
           <h2>{this.props.clue.question}</h2>
           <input className="input-answer" type="text" placeholder="type in your answer..." ref="useranswer"/>
           <input className="submit-btn" type="submit" value="submit answer" onClick={this.submitAnswer} />
