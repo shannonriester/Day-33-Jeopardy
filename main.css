@@ -85,6 +85,8 @@ header input, header button {
 
 .modal-container {
   position: fixed;
+  display: flex;
+  align-items: center;
   top: 0;
   bottom: 0;
   left: 0;
@@ -94,55 +96,52 @@ header input, header button {
   .modal-container .modal {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 50%;
-    width: 40%;
+    justify-content: space-around;
+    height: 10em;
+    width: 15em;
     margin: 0 auto;
-    background: #EDEFED; }
+    background: #e7eef5; }
   .modal-container h2 {
     color: #1506A1;
-    display: block;
-    text-align: center;
-    max-width: 40rem;
-    margin: 5% auto;
-    padding: 3%;
-    font-size: 2rem;
-    line-height: 1.2em; }
+    text-align: left;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 1.4;
+    width: 55%;
+    margin-bottom: 0; }
   .modal-container .input-answer {
-    padding: 2%;
+    padding: 2% 2% 0 2%;
     border: none;
     width: 50%;
     margin: 0 auto;
-    /* margin-top: 0%; */
     font-size: 1rem;
-    border-radius: 2px; }
-  .modal-container .submit-btn {
-    border: none;
+    border-radius: 2px;
+    height: 8em;
+    outline: none; }
+  .modal-container .modal-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%; }
+  .modal-container .submit-btn, .modal-container .pass-btn {
+    width: 40%;
     padding: 2%;
     background: #FFF;
     color: #1506A1;
     border: solid #1506A1 1px;
     border-radius: 2px;
     font-size: 1rem; }
-    .modal-container .submit-btn:hover {
+    .modal-container .submit-btn:hover, .modal-container .pass-btn:hover {
       transition: .5s;
       background: #1506A1;
       color: #FFF;
       border: solid #FFF 1px;
       border-radius: 3px; }
   .modal-container .pass-btn {
-    border: none;
-    color: #E00007;
-    display: block;
-    margin: 5% auto;
-    font-size: 1rem;
-    background: none; }
+    border: solid #E00007 1px;
+    color: #E00007; }
     .modal-container .pass-btn:hover {
-      transition: .5s;
-      border: solid #FFF 1px;
-      border-radius: 3px;
-      background: #E00007;
-      color: #FFF; }
+      background: #E00007; }
 
 .signup-form, .login-form {
   display: flex;
@@ -195,8 +194,12 @@ header input, header button {
         transition: .5s;
         background: rgba(21, 115, 215, 0.6); }
     .column-container ul .wasViewed {
-      color: red;
+      color: grey;
       text-decoration: line-through; }
+    .column-container ul .correct {
+      color: #06FF7A; }
+    .column-container ul .wrong {
+      color: red; }
 
 body {
   font-family: sans-serif;
