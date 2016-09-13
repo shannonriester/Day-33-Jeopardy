@@ -1,30 +1,36 @@
-header::after {
-  content: '';
-  display: block;
-  clear: both; }
-header h3 {
-  margin: none; }
-header input, header button {
-  float: right;
-  border: none;
-  padding: 5px;
-  color: #FFF;
-  background: transparent;
-  border: solid transparent 1px;
-  margin: 1% 2%;
-  font-size: 1rem; }
-  header input:hover, header button:hover {
-    transition: .5s;
-    background: #B1D7FE;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 80px; }
+  header h3 {
+    margin: none; }
+  header input, header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 10px;
+    border-radius: 2px;
     color: #FFF;
-    border: solid #FFF 1px;
-    border-radius: 5px; }
+    background: transparent;
+    border: solid transparent 1px;
+    margin: 1% 2%;
+    font-size: 1rem;
+    outline: none; }
+    header input:hover, header button:hover {
+      transition: .5s;
+      background: #89BCF1;
+      color: #FFF;
+      border: solid #FFF 1px;
+      border-radius: 5px; }
 
 .signup-modal {
   text-align: center; }
-  .signup-modal .h3-signup {
+  .signup-modal h3 {
     margin: 0;
-    color: #FFF;
+    color: #FED75E;
     font-size: 2rem; }
   .signup-modal .signup-form, .signup-modal .login-form {
     text-align: center; }
@@ -33,40 +39,39 @@ header input, header button {
       border: none;
       width: 50%;
       margin: 0 auto;
-      /* margin-top: 0%; */
       font-size: 1rem;
       border-radius: 2px; }
-    .signup-modal .signup-form input#singup-submit, .signup-modal .login-form input#singup-submit {
+    .signup-modal .signup-form .modal-btn, .signup-modal .login-form .modal-btn {
       border: none;
       padding: 2%;
-      background: #FFF;
-      color: #1506A1;
-      border: solid blue 1px;
+      background: none;
+      color: #FED75E;
+      border: none;
       border-radius: 2px;
       font-size: 1rem; }
-      .signup-modal .signup-form input#singup-submit:hover, .signup-modal .login-form input#singup-submit:hover {
+      .signup-modal .signup-form .modal-btn:hover, .signup-modal .login-form .modal-btn:hover {
         transition: .5s;
-        background: #1506A1;
+        background: #FED75E;
         color: #FFF;
         border: solid #FFF 1px;
         border-radius: 3px; }
-    .signup-modal .signup-form .modalCancelBtn, .signup-modal .login-form .modalCancelBtn {
+    .signup-modal .signup-form .cancel-btn, .signup-modal .login-form .cancel-btn {
       border: none;
-      color: #E00007;
+      color: #FED75E;
       display: block;
       margin: 2% auto;
       font-size: 1rem;
       background: none; }
-      .signup-modal .signup-form .modalCancelBtn:hover, .signup-modal .login-form .modalCancelBtn:hover {
+      .signup-modal .signup-form .cancel-btn:hover, .signup-modal .login-form .cancel-btn:hover {
         transition: .5s;
         border: solid #FFF 1px;
         border-radius: 3px;
-        background: #E00007;
+        background: #FED75E;
         color: #FFF; }
 
 #game-container::after {
   content: ' ';
-  background: #B1D7FE;
+  background: #89BCF1;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -74,14 +79,13 @@ header input, header button {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0.7;
-  z-index: -1;
-  background-position: center center; }
+  z-index: -1; }
 
-.gameboard::after {
-  content: ' ';
-  clear: both;
-  display: block; }
+.gameboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; }
 
 .modal-container {
   position: fixed;
@@ -101,11 +105,11 @@ header input, header button {
     width: 15em;
     margin: 0 auto;
     background: #e7eef5; }
-  .modal-container h2 {
-    color: #1506A1;
+  .modal-container h2, .modal-container h3 {
+    color: #FED75E;
     text-align: left;
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 500;
     line-height: 1.4;
     width: 55%;
     margin-bottom: 0; }
@@ -127,10 +131,11 @@ header input, header button {
     width: 40%;
     padding: 2%;
     background: #FFF;
-    color: #1506A1;
-    border: solid #1506A1 1px;
+    color: #D81159;
+    border: solid #D81159 1px;
     border-radius: 2px;
-    font-size: 1rem; }
+    font-size: 1rem;
+    outline: none; }
     .modal-container .submit-btn:hover, .modal-container .pass-btn:hover {
       transition: .5s;
       background: #1506A1;
@@ -151,7 +156,7 @@ header input, header button {
   margin: 0 auto;
   height: 60%;
   width: 50%;
-  background: #89BCF1; }
+  background: #e7eef5; }
 
 .answer-reveal {
   display: none; }
@@ -166,29 +171,29 @@ header input, header button {
   float: left;
   text-align: center; }
   .column-container h3 {
-    font-size: 1.3rem;
-    font-weight: 100;
+    display: inline-flex;
+    justify-content: center;
+    width: 5em;
+    height: 4em;
+    font-size: 20px;
+    font-weight: 400;
     padding: 0;
     margin: 0;
-    color: #FFF;
-    display: inline-flex;
-    height: 10vh;
-    align-items: center;
-    justify-content: center; }
+    color: #D81159; }
   .column-container ul {
     margin: 0;
     padding: 0;
     text-align: center;
     color: #FED75E; }
     .column-container ul li {
-      font-size: 85%;
+      font-size: 34px;
       overflow: scroll;
       background: rgba(21, 115, 215, 0.35);
       list-style-type: none;
       border: 2px solid white;
       border-radius: 5px;
       padding: 10% 0%;
-      margin: 5% 10%;
+      margin: 5% 5%;
       min-width: 3rem; }
       .column-container ul li:hover {
         transition: .5s;
@@ -197,7 +202,7 @@ header input, header button {
       color: grey;
       text-decoration: line-through; }
     .column-container ul .correct {
-      color: #06FF7A; }
+      color: #61E294; }
     .column-container ul .wrong {
       color: red; }
 

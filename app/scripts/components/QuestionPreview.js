@@ -11,7 +11,6 @@ const QuestionPreview = React.createClass({
   },
   showModal: function() {
     this.props.showModal(this.props.clue, this.props.index);
-
   },
   componentWillReceiveProps: function(newProps) {
     this.setState({
@@ -20,7 +19,6 @@ const QuestionPreview = React.createClass({
     });
   },
   render: function() {
-    // console.log(this.state);
     if (this.props.wasViewed && (this.props.answer === 'correct')) {
       return (<li className="q-previews wasViewed correct">${this.props.clue.value}</li>);
     } else if (this.props.wasViewed && (this.props.answer === 'wrong')) {

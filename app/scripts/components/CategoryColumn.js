@@ -27,7 +27,6 @@ const CategoryColumn = React.createClass({
   },
   correctAnswer: function(clue) {
     store.score.correctAnswer(clue);
-    // store.category.answeredCorrect(clue);
     let answer = this.state.answer;
     answer[this.state.modalView] = 'correct';
     this.setState({
@@ -37,8 +36,6 @@ const CategoryColumn = React.createClass({
   },
   wrongAnswer: function(clue) {
     store.score.wrongAnswer(clue);
-    // store.category.answeredWrong(clue);
-
     let answer = this.state.answer;
     answer[this.state.modalView] = 'wrong';
 

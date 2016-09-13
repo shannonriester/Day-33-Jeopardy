@@ -1,38 +1,32 @@
 .column-container {
   width: calc(100vw/6);
   float: left;
-  // margin-top: 2%;
   text-align: center;
   h3 {
-    font-size: 1.3rem;
-    font-weight: 100;
+    display: inline-flex;
+    justify-content: center;
+    width: 5em;
+    height: 4em;
+    font-size: 20px;
+    font-weight: 400;
     padding: 0;
     margin: 0;
-    color: #FFF;
-    display: inline-flex;
-    height: 10vh;
-    // max-height: 15vh;
-    // width: 95%;
-    align-items: center;
-    justify-content: center;
+    color: $accent;
   }
   ul {
     margin: 0;
     padding: 0;
     text-align: center;
-    color: #FED75E;
+    color: $secondary;
     li {
-      // background: url('../assets/Jeopardy.jpg');
-      // background-repeat: no-repeat;
-      // background-size: 100vh;
-      font-size: 85%;
+      font-size: 34px;
       overflow: scroll;
       background: transparentize(#1573D7, .65);
       list-style-type: none;
       border: 2px solid white;
       border-radius: 5px;
       padding: 10% 0%;
-      margin: 5% 10%;
+      margin: 5% 5%;
       min-width: 3rem;
       &:hover {
         transition: .5s;
@@ -44,7 +38,7 @@
       text-decoration: line-through;
     }
     .correct {
-      color: #06FF7A;
+      color: $correct;
     }
     .wrong {
       color: red;

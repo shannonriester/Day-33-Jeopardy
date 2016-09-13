@@ -1,9 +1,9 @@
 .signup-modal {
   text-align: center;
   // background:
-  .h3-signup {
+  h3 {
     margin: 0;
-    color: #FFF;
+    color: $secondary;
     font-size: 2rem;
   }
   .signup-form, .login-form {
@@ -13,29 +13,28 @@
       border: none;
       width: 50%;
       margin: 0 auto;
-      /* margin-top: 0%; */
       font-size: 1rem;
       border-radius: 2px;
     }
-    input#singup-submit {
+    .modal-btn {
       border: none;
       padding: 2%;
-      background: #FFF;
-      color: #1506A1;
-      border: solid blue 1px;
+      background: none;
+      color: $secondary;
+      border: none;
       border-radius: 2px;
       font-size: 1rem;
       &:hover {
         transition: .5s;
-        background: #1506A1;
+        background: $secondary;
         color: #FFF;
         border: solid #FFF 1px;
         border-radius: 3px;
       }
     }
-    .modalCancelBtn {
+    .cancel-btn {
       border: none;
-      color: #E00007;
+      color: $secondary;
       display: block;
       margin: 2% auto;
       font-size: 1rem;
@@ -44,7 +43,7 @@
         transition: .5s;
         border: solid #FFF 1px;
         border-radius: 3px;
-        background: #E00007;
+        background: $secondary;
         color: #FFF;
       }
     }

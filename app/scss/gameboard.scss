@@ -1,8 +1,7 @@
 #game-container {
   &::after{
     content: ' ';
-    // background: url('../assets/Jeopardy-Logo.jpg');
-    background: #B1D7FE;
+    background: $primary;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -10,21 +9,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    opacity: 0.7;
-    // height: 100vh;
-    // width: 100vw;
     z-index: -1;
-    background-position: center center;
+    // background-position: center center;
   }
 }
 .gameboard {
-  // margin: 0;
-  // padding: 0;
-  // height: 100rem;
-  // width: 100vw;
-  &::after{
-    content: ' ';
-    clear: both;
-    display: block;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }

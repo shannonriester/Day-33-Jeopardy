@@ -21,8 +21,8 @@ const Login = React.createClass({
           <h3 className="h3-modal">Login</h3>
           <input ref="username" type="text" placeholder="username"/>
           <input ref="password" type="password" placeholder="password"/>
-          <input id="signup-submit modalSubmitBtn" type="submit" value="enter" onClick={this.loginFunction}/>
-          <input className="signup-cancel modalCancelBtn" type="button" value="cancel" onClick={this.props.hideLogin} />
+          <input className="modal-btn" type="submit" value="enter" onClick={this.loginFunction}/>
+          <input className="cancel-btn modal-btn" type="button" value="cancel" onClick={this.props.hideLogin} />
         </form>
       </div>
     );

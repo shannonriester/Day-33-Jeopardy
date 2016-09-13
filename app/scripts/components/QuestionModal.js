@@ -15,7 +15,11 @@ const QuestionModal = React.createClass({
         let length = jeopardyAnswer.length;
         let sliceEnd = length - 4;
         jeopardyAnswer = jeopardyAnswer.slice(3, sliceEnd);
-        console.log(jeopardyAnswer);
+      }
+      if (jeopardyAnswer.indexOf('"') !== -1) {
+        let length = jeopardyAnswer.length;
+        let sliceEnd = length - 1;
+        jeopardyAnswer = jeopardyAnswer.slice(1, sliceEnd);
       }
 
     if (userAnswer === jeopardyAnswer) {
@@ -23,8 +27,8 @@ const QuestionModal = React.createClass({
     } else {
       this.props.wrongAnswer(this.props.clue);
     }
-    console.log('jeopardyAnswer ', jeopardyAnswer);
-    console.log('userAnswer ', userAnswer);
+    // console.log('jeopardyAnswer ', jeopardyAnswer);
+    // console.log('userAnswer ', userAnswer);
     this.props.hideModal();
   },
   render: function(){

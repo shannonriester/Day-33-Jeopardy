@@ -15,13 +15,13 @@
     height: 10em;
     width: 15em;
     margin: 0 auto;
-    background: #e7eef5;
+    background: $background;
   }
-  h2 {
-    color: #1506A1;
+  h2, h3 {
+    color: $secondary;
     text-align: left;
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 500;
     line-height: 1.4;
     width: 55%;
     margin-bottom: 0;
@@ -46,10 +46,11 @@
     width: 40%;
     padding: 2%;
     background: #FFF;
-    color: #1506A1;
-    border: solid #1506A1 1px;
+    color: $accent;
+    border: solid $accent 1px;
     border-radius: 2px;
     font-size: 1rem;
+    outline: none;
     &:hover {
       transition: .5s;
       background: #1506A1;
@@ -59,14 +60,10 @@
     }
   }
   .pass-btn {
-    border: solid #E00007 1px;
-    color: #E00007;
-    // display: block;
-    // margin: 5% auto;
-    // font-size: 1rem;
-    // background: white;
+    border: solid $wrong 1px;
+    color: $wrong;
     &:hover {
-      background: #E00007;
+      background: $wrong;
     }
   }
 }
@@ -79,7 +76,7 @@
   margin: 0 auto;
   height: 60%;
   width: 50%;
-  background: #89BCF1;
+  background: $background;
 }
 
 .answer-reveal {
