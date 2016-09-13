@@ -3,7 +3,6 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 
 import CategoryColumn from './CategoryColumn';
-// import session from '../models/Session';
 import store from '../store';
 
 const Gamebaord = React.createClass({
@@ -38,10 +37,13 @@ const Gamebaord = React.createClass({
       });
     return (
       <div id="game-container">
+        <section className="top-score">
+          <p className="current-winnings">Current Winnings</p>
+          <p>${this.state.score}</p>
+        </section>
         <div className="gameboard">{categoriesArr}</div>
         <footer>
-          <div className="game-score">${this.state.score}</div>
-          <div className="game-answer">"{this.state.answer}"</div>
+          <div className="game-answer">{this.state.answer}</div>
         </footer>
       </div>
     );

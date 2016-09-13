@@ -12,13 +12,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 10em;
+    height: 12em;
     width: 15em;
     margin: 0 auto;
     background: $background;
   }
   h2, h3 {
-    color: $secondary;
+    color: $accent;
     text-align: left;
     font-size: 30px;
     font-weight: 500;
@@ -53,17 +53,17 @@
     outline: none;
     &:hover {
       transition: .5s;
-      background: #1506A1;
+      background: $accent;
       color: #FFF;
       border: solid #FFF 1px;
       border-radius: 3px;
     }
   }
   .pass-btn {
-    border: solid $wrong 1px;
-    color: $wrong;
+    border: solid $accent 1px;
+    color: $accent;
     &:hover {
-      background: $wrong;
+      background: $accent;
     }
   }
 }

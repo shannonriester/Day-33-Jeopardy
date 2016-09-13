@@ -19,7 +19,6 @@ const Header = React.createClass({
     };
   },
   componentDidMount: function() {
-    // console.log(store.authtoken);
     session.on('change', () => {
       this.setState({authtoken: true});
       console.log('CHANGED SESSION');

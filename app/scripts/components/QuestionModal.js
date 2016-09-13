@@ -37,7 +37,7 @@ const QuestionModal = React.createClass({
       <div className="modal-container">
         <form className="modal question-modal" onSubmit={this.submitAnswer}>
           <h2>{this.props.clue.question}</h2>
-          <textarea className="input-answer" type="text" placeholder="type in your answer..." ref="useranswer"></textarea>
+          <input className="input-answer" type="text" placeholder="type in your answer..." ref="useranswer"/>
           <section className="modal-btn-container">
             <input className="submit-btn" type="submit" value="submit answer" onClick={this.submitAnswer} />
             <input className="pass-btn" type="button" value="pass" onClick={this.submitAnswer} />

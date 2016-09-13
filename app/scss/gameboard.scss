@@ -19,3 +19,30 @@
   justify-content: center;
   width: 100%;
 }
+
+.top-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  bottom: 60px;
+  left: 20px;
+  width: 30%;
+
+  p {
+    color: $secondary;
+    margin: 0;
+    font-size: 25px;
+  }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 14vh;
+  width: 60%;
+  margin: 0 auto;
+  border: solid white 1px;
+  color: $accent;
+}
