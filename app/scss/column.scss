@@ -40,8 +40,14 @@
       }
     }
     .wasViewed {
-      color: red;
+      color: grey;
       text-decoration: line-through;
+    }
+    .correct {
+      color: #06FF7A;
+    }
+    .wrong {
+      color: red;
     }
   }
 }

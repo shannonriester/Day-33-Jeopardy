@@ -2,29 +2,29 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 
 import store from '../store';
-// import session from './Session';
 
 const Score = Backbone.Model.extend({
   defaults: {
     answer: '',
-    winnings: 0
+    winnings: 0,
+    answeredWrong: [],
+    answeredCorrect: [],
   },
-  correctAnswer: function(clue){
+  correctAnswer: function(clue) {
     console.log('RIGHT ON! CORRECT ANSWER');
-    // clue.addClass('correctAnswer');
-    
+    console.log(clue);
     let answer = clue.answer;
     let newScore = clue.value + this.get('winnings');
 
     this.set('winnings', newScore);
     this.set('answer', answer);
 
-    this.trigger('change');
+    let correctArr = this.get('answeredCorrect');
+    correctArr = correctArr.concat(clue.id)
+    this.set('answeredCorrect', correctArr);
   },
   wrongAnswer: function(clue){
-    console.log('WRONG ANSWER.');
-
-    // $addClass('wrongAnswer');
+    console.log('WRONG ANSWER');
 
     let answer = clue.answer;
     let newScore = this.get('winnings') - clue.value;
@@ -32,7 +32,9 @@ const Score = Backbone.Model.extend({
     this.set('winnings', newScore);
     this.set('answer', answer);
 
-    this.trigger('change');
+    let wrongArr = this.get('answeredWrong');
+    wrongArr = wrongArr.concat(clue.id);
+    this.set('answeredWrong', wrongArr);
   }
 });
 

@@ -1,9 +1,11 @@
 import CategoriesCollection from './collections/CategoriesCollection';
+import CategoryModel from './models/CategoryModel';
 import Score from './models/Score';
 import session from './models/Session';
 
 const store = {
   categories: new CategoriesCollection(),
+  category: new CategoryModel(),
   score: new Score(),
   authtoken: '',
   settings: {

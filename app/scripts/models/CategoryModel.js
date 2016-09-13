@@ -6,6 +6,9 @@ const CategoryModel = Backbone.Model.extend({
   urlRoot: `http://jservice.io/api/category?id=4`,
   defaults: {
     category: {},
+    wasViewed: false,
+    answeredCorrect: [],
+    answeredWrong: [],
   },
   getCategory: function(categoryId){
     $.ajax({
@@ -29,20 +32,23 @@ const CategoryModel = Backbone.Model.extend({
       }
     });
   },
-  wasViewed: function(item){
-    // console.log(item.props.clue);
-    // let viewdArr = [];
-    // this.set({'wasViewed', true});
-    // console.log('you\'re running the wasViewed() function!');
-    item.trigger('change');
+  wasViewed: function(clue) {
+    this.set('wasViewed', true);
+    // this.trigger('change');
   },
-  answeredCorrect: function(item){
-    item.removeClass('wrongAnswer');
-    item.trigger('change');
+  answeredCorrect: function(clue) {
+    this.wasViewed(clue);
+
+    let correctArr = this.get('answeredCorrect');
+    correctArr = correctArr.concat(clue.id)
+    this.set('answeredCorrect', correctArr);
   },
-  answeredWrong: function(item){
-    item.removeClass('correctAnswer');
-    item.trigger('change');
+  answeredWrong: function(clue) {
+    this.wasViewed(clue);
+
+    let wrongArr = this.get('answeredWrong');
+    wrongArr = wrongArr.concat(clue.id);
+    this.set('answeredWrong', wrongArr);
   },
 });
 

@@ -7,40 +7,66 @@ import QuestionModal from './QuestionModal';
 
 const CategoryColumn = React.createClass({
   getInitialState: function(){
-    return {showModal : false};
+    return {
+      showModal: false,
+      clue: '',
+      wasViewed: false,
+      modalView: undefined,
+      answer: ['unanswered', 'unanswered', 'unanswered', 'unanswered', 'unanswered'],
+    }
   },
-  showModal: function(clue){
+  showModal: function(clue, index) {
     this.setState({
-      showModal : true,
-      clue : clue,
-      correctAnswers: [],
-      wrongAnswers: [],
+      showModal: true,
+      clue: clue,
+      modalView: index,
     });
   },
-  hideModal: function(){
-    this.setState({showModal : false});
+  hideModal: function() {
+    this.setState({showModal: false});
   },
-  correctAnswer: function() {},
-  wrongAnswer: function() {},
-  render: function(){
+  correctAnswer: function(clue) {
+    store.score.correctAnswer(clue);
+    // store.category.answeredCorrect(clue);
+    let answer = this.state.answer;
+    answer[this.state.modalView] = 'correct';
+    this.setState({
+      wasViewed: true,
+      answer: answer,
+    });
+  },
+  wrongAnswer: function(clue) {
+    store.score.wrongAnswer(clue);
+    // store.category.answeredWrong(clue);
+
+    let answer = this.state.answer;
+    answer[this.state.modalView] = 'wrong';
+
+    this.setState({
+      wasViewed: true,
+      answer: answer,
+    });
+  },
+  render: function() {
     let questionModal;
     if (this.state.showModal) {
       questionModal = (<QuestionModal
         correctAnswer={this.correctAnswer}
         wrongAnswer={this.wrongAnswer}
         hideModal={this.hideModal}
-        removePreview={this.removePreview}
-        clue={this.state.clue}/>);
+        clue={this.state.clue} />);
     }
+
     if (!this.props.clues) {
       return null;
     }
 
-    let cluesObj = this.props.clues.map((clue,i) => {
+    let questionPreviews = this.props.clues.map((clue, i) => {
       return (<QuestionPreview
         showModal={this.showModal}
-        correctAnswer={this.correctAnswer}
-        wrongAnswer={this.wrongAnswer}
+        index={i}
+        answer={this.state.answer[i]}
+        wasViewed={this.state.wasViewed}
         key={i}
         clue={clue} />);
     });
@@ -48,7 +74,7 @@ const CategoryColumn = React.createClass({
     return (
       <div className="column-container">
         <h3>{this.props.title}</h3>
-        <ul className="question-preview-container">{cluesObj}</ul>
+        <ul className="question-preview-container">{questionPreviews}</ul>
         {questionModal}
       </div>
     );

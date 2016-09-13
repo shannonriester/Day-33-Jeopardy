@@ -1,48 +1,34 @@
 import React from 'react';
 
 import store from '../store';
-import QuestionModal from './QuestionModal';
 
 const QuestionPreview = React.createClass({
-  getInitialState: function(){
+  getInitialState: function() {
     return {
-      wasViewed: false,
-      answeredCorrect: null,
-      answeredWrong: null,
-    };
+      wasViewed: this.props.wasViewed,
+      answer: '',
+    }
   },
-  componentDidMount: function(){
-    store.categories.on('change', () => {
-      this.setState({wasViewed: store.categories.get('wasViewed')});
+  showModal: function() {
+    this.props.showModal(this.props.clue, this.props.index);
+
+  },
+  componentWillReceiveProps: function(newProps) {
+    this.setState({
+      wasViewed: newProps.wasViewed,
+      answer: newProps.answer,
     });
   },
-  runShowModal: function() {
-    this.props.showModal(this.props.clue);
-    this.setState({wasViewed:true});
-  },
-  answeredCorrect: function() {
-    this.setState({wasViewed:true});
-  },
-  answeredWrong: function() {
-    this.setState({wasViewed:true});
-  },
-  render: function(){
-    if (this.state.wasViewed && this.state.answeredCorrect) {
-      return (
-        <li className="q-previews wasViewed answeredCorrect" ref="questionPreview">${this.props.clue.value}</li>
-      );
-    } else if (this.state.wasViewed && this.state.answeredWrong) {
-      return (
-        <li className="q-previews wasViewed answeredWrong" ref="questionPreview">${this.props.clue.value}</li>
-      );
+  render: function() {
+    // console.log(this.state);
+    if (this.props.wasViewed && (this.props.answer === 'correct')) {
+      return (<li className="q-previews wasViewed correct">${this.props.clue.value}</li>);
+    } else if (this.props.wasViewed && (this.props.answer === 'wrong')) {
+      return (<li className="q-previews wasViewed wrong">${this.props.clue.value}</li>);
     } else {
         return (
-          <li
-            className="q-previews"
-            onClick={this.runShowModal}
-            answeredCorrect={this.answeredCorrect}
-            answeredWrong={this.answeredWrong}
-            ref="questionPreview">${this.props.clue.value}
+          <li className="q-previews" onClick={this.showModal}>
+            ${this.props.clue.value}
           </li>
         );
     }
