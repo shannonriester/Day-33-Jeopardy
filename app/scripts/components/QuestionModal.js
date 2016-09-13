@@ -17,9 +17,11 @@ const QuestionModal = React.createClass({
 
     if (userAnswer === jeopardyAnswer) {
       store.score.correctAnswer(this.props.clue);
+      this.props.answeredCorrect(this.props.clue);
       // store.categories.answeredCorrect(this.props.clue);
     } else {
       store.score.wrongAnswer(this.props.clue);
+      this.props.answeredWrong(this.props.clue);
       // store.categories.answeredWrong(this.props.clue);
     }
 

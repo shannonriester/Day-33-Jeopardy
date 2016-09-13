@@ -11,7 +11,7 @@ const Gamebaord = React.createClass({
     return {
       categories: store.categories.toJSON(),
       score: 0,
-      answer: ''
+      answer: '',
     }
   },
   componentDidMount: function(){
@@ -23,18 +23,18 @@ const Gamebaord = React.createClass({
       }
     });
 
-      store.categories.makeNewGame();
+    store.categories.makeNewGame();
 
     store.score.on('change', () => {
       this.setState({score : store.score.get('winnings')});
-      this.setState({answer : store.score.get('answer')})
+      this.setState({answer : store.score.get('answer')});
     });
 
   },
   render: function(){
     let categoriesArr = this.state.categories.map((catObj, i, arr) => {
       let index=i;
-      return <CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />;
+      return (<CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />);
       });
     return (
       <div id="game-container">

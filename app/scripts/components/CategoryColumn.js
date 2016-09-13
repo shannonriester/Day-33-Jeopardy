@@ -12,23 +12,37 @@ const CategoryColumn = React.createClass({
   showModal: function(clue){
     this.setState({
       showModal : true,
-      clue : clue
+      clue : clue,
+      correctAnswers: [],
+      wrongAnswers: [],
     });
   },
   hideModal: function(){
     this.setState({showModal : false});
   },
+  correctAnswer: function() {},
+  wrongAnswer: function() {},
   render: function(){
     let questionModal;
     if (this.state.showModal) {
-      questionModal = <QuestionModal hideModal={this.hideModal} removePreview={this.removePreview} clue={this.state.clue}/>;
+      questionModal = (<QuestionModal
+        correctAnswer={this.correctAnswer}
+        wrongAnswer={this.wrongAnswer}
+        hideModal={this.hideModal}
+        removePreview={this.removePreview}
+        clue={this.state.clue}/>);
     }
     if (!this.props.clues) {
       return null;
     }
 
     let cluesObj = this.props.clues.map((clue,i) => {
-      return (<QuestionPreview showModal={this.showModal} key={i} clue={clue} />);
+      return (<QuestionPreview
+        showModal={this.showModal}
+        correctAnswer={this.correctAnswer}
+        wrongAnswer={this.wrongAnswer}
+        key={i}
+        clue={clue} />);
     });
 
     return (
