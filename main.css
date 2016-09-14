@@ -1,8 +1,13 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+
 header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  width: 100%;
+  justify-content: space-around;
+  width: 10em;
   height: 80px; }
   header h3 {
     margin: none; }
@@ -13,7 +18,7 @@ header {
     width: 100px;
     padding: 10px;
     border-radius: 2px;
-    color: #FFF;
+    color: #FFFCF7;
     background: transparent;
     border: solid transparent 1px;
     margin: 1% 2%;
@@ -24,7 +29,8 @@ header {
       background: #89BCF1;
       color: #FFF;
       border: solid #FFF 1px;
-      border-radius: 2px; }
+      border-radius: 2px;
+      cursor: pointer; }
 
 .signup-modal {
   text-align: center; }
@@ -33,41 +39,51 @@ header {
     color: #FED75E;
     font-size: 2rem; }
   .signup-modal .signup-form, .signup-modal .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 10em;
+    width: 8em;
+    background: #e7eef5;
     text-align: center; }
-    .signup-modal .signup-form input, .signup-modal .login-form input {
-      padding: 2%;
-      border: none;
-      width: 50%;
-      margin: 0 auto;
-      font-size: 1rem;
-      border-radius: 2px; }
-    .signup-modal .signup-form .modal-btn, .signup-modal .login-form .modal-btn {
-      border: none;
-      padding: 2%;
-      background: none;
-      color: #FED75E;
-      border: none;
-      border-radius: 2px;
-      font-size: 1rem; }
-      .signup-modal .signup-form .modal-btn:hover, .signup-modal .login-form .modal-btn:hover {
-        transition: .5s;
-        background: #FED75E;
-        color: #FFF;
-        border: solid #FFF 1px;
-        border-radius: 3px; }
-    .signup-modal .signup-form .cancel-btn, .signup-modal .login-form .cancel-btn {
-      border: none;
-      color: #FED75E;
-      display: block;
-      margin: 2% auto;
-      font-size: 1rem;
-      background: none; }
-      .signup-modal .signup-form .cancel-btn:hover, .signup-modal .login-form .cancel-btn:hover {
-        transition: .5s;
-        border: solid #FFF 1px;
-        border-radius: 3px;
-        background: #FED75E;
-        color: #FFF; }
+  .signup-modal .signup-form input, .signup-modal .login-form input {
+    padding: 2%;
+    border: none;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1rem;
+    border-radius: 2px; }
+  .signup-modal .signup-form .modal-btn, .signup-modal .login-form .modal-btn {
+    border: none;
+    padding: 2%;
+    background: none;
+    color: #D81159;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem; }
+    .signup-modal .signup-form .modal-btn:hover, .signup-modal .login-form .modal-btn:hover {
+      transition: .5s;
+      background: #D81159;
+      color: #FFF;
+      border: solid #FFF 1px;
+      border-radius: 3px;
+      cursor: pointer; }
+  .signup-modal .signup-form .cancel-btn, .signup-modal .login-form .cancel-btn {
+    border: none;
+    color: #D81159;
+    display: block;
+    margin: 2% auto;
+    font-size: 1rem;
+    background: none; }
+    .signup-modal .signup-form .cancel-btn:hover, .signup-modal .login-form .cancel-btn:hover {
+      transition: .5s;
+      border: solid #FFF 1px;
+      border-radius: 3px;
+      background: #D81159;
+      color: #FFF;
+      cursor: pointer; }
 
 #game-container::after {
   content: ' ';
@@ -85,7 +101,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%; }
+  width: 100%;
+  position: relative;
+  bottom: 30px; }
 
 .top-score {
   display: flex;
@@ -94,7 +112,7 @@ header {
   position: relative;
   bottom: 60px;
   left: 20px;
-  width: 30%; }
+  width: 300px; }
   .top-score p {
     color: #FED75E;
     margin: 0;
@@ -104,11 +122,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 14vh;
-  width: 60%;
+  height: 80px;
+  width: 600px;
   margin: 0 auto;
-  border: solid white 1px;
-  color: #D81159; }
+  border: solid #FFFCF7 1px;
+  border-radius: 2px;
+  color: #FFFCF7;
+  position: relative;
+  bottom: 10px; }
 
 .modal-container {
   position: fixed;
@@ -119,7 +140,8 @@ footer {
   left: 0;
   right: 0;
   padding: 5% 0 0;
-  background: rgba(0, 0, 0, 0.7); }
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1; }
   .modal-container .modal {
     display: flex;
     align-items: center;
@@ -171,16 +193,6 @@ footer {
     .modal-container .pass-btn:hover {
       background: #D81159; }
 
-.signup-form, .login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  height: 60%;
-  width: 50%;
-  background: #e7eef5; }
-
 .answer-reveal {
   display: none; }
 
@@ -191,17 +203,22 @@ footer {
 
 .column-container {
   width: calc(100vw/6);
-  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center; }
   .column-container h3 {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    height: 4em;
+    height: 70px;
     font-size: 20px;
     font-weight: 400;
     padding: 0;
     margin: 0;
-    color: #FFF; }
+    color: #FFFCF7;
+    align-items: center;
+    width: 200px;
+    align-self: center; }
   .column-container ul {
     margin: 0;
     padding: 0;
@@ -219,14 +236,15 @@ footer {
       min-width: 3rem; }
       .column-container ul li:hover {
         transition: .5s;
-        background: rgba(21, 115, 215, 0.6); }
+        background: rgba(21, 115, 215, 0.6);
+        cursor: pointer; }
     .column-container ul .wasViewed {
       color: grey;
       text-decoration: line-through; }
     .column-container ul .correct {
-      color: #61E294; }
+      color: #4BF973; }
     .column-container ul .wrong {
-      color: red; }
+      color: #D81912; }
 
 body {
   font-family: sans-serif;
