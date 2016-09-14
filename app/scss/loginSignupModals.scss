@@ -7,7 +7,17 @@
     font-size: 2rem;
   }
   .signup-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 10em;
+    width: 8em;
+    background: $background;
     text-align: center;
+  }
+  .signup-form, .login-form {
     input {
       padding: 2%;
       border: none;
@@ -20,21 +30,22 @@
       border: none;
       padding: 2%;
       background: none;
-      color: $secondary;
+      color: $accent;
       border: none;
       border-radius: 2px;
       font-size: 1rem;
       &:hover {
         transition: .5s;
-        background: $secondary;
+        background: $accent;
         color: #FFF;
         border: solid #FFF 1px;
         border-radius: 3px;
+        cursor: pointer;
       }
     }
     .cancel-btn {
       border: none;
-      color: $secondary;
+      color: $accent;
       display: block;
       margin: 2% auto;
       font-size: 1rem;
@@ -43,8 +54,9 @@
         transition: .5s;
         border: solid #FFF 1px;
         border-radius: 3px;
-        background: $secondary;
+        background: $accent;
         color: #FFF;
+        cursor: pointer;
       }
     }
   }

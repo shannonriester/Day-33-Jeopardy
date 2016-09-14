@@ -8,6 +8,7 @@
   right: 0;
   padding: 5% 0 0;
   background: rgba(0, 0, 0,.7);
+  z-index: 1;
   .modal {
     display: flex;
     align-items: center;
@@ -67,18 +68,6 @@
     }
   }
 }
-
-.signup-form, .login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  height: 60%;
-  width: 50%;
-  background: $background;
-}
-
 .answer-reveal {
   display: none;
 }

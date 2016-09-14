@@ -1,16 +1,21 @@
 .column-container {
   width: calc(100vw/6);
-  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   h3 {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    height: 4em;
+    height: 70px;
     font-size: 20px;
     font-weight: 400;
     padding: 0;
     margin: 0;
-    color: #FFF;
+    color: #FFFCF7;
+    align-items: center;
+    width: 200px;
+    align-self: center;
   }
   ul {
     margin: 0;
@@ -30,6 +35,7 @@
       &:hover {
         transition: .5s;
         background: transparentize(#1573D7, .4);
+        cursor: pointer;
       }
     }
     .wasViewed {
@@ -40,7 +46,7 @@
       color: $correct;
     }
     .wrong {
-      color: red;
+      color: $wrong;
     }
   }
 }

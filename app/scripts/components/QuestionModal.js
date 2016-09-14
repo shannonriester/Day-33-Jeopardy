@@ -27,8 +27,6 @@ const QuestionModal = React.createClass({
     } else {
       this.props.wrongAnswer(this.props.clue);
     }
-    // console.log('jeopardyAnswer ', jeopardyAnswer);
-    // console.log('userAnswer ', userAnswer);
     this.props.hideModal();
   },
   render: function(){

@@ -1,8 +1,14 @@
-header {
+.header-container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10em;
   height: 80px;
   h3 {
     margin: none;
@@ -14,7 +20,7 @@ header {
     width: 100px;
     padding: 10px;
     border-radius: 2px;
-    color: #FFF;
+    color: #FFFCF7;
     background: transparent;
     border: solid transparent 1px;
     margin: 1% 2%;
@@ -26,6 +32,7 @@ header {
       color: #FFF;
       border: solid #FFF 1px;
       border-radius: 2px;
+      cursor: pointer;
     }
   }
 }
