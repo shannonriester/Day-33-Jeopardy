@@ -2,8 +2,9 @@ import React from 'react';
 import Backbone from 'backbone';
 import $ from 'jquery';
 
-import CategoryColumn from './CategoryColumn';
 import store from '../store';
+import Header from './Header';
+import CategoryColumn from './CategoryColumn';
 
 const Gamebaord = React.createClass({
   getInitialState: function(){
@@ -54,15 +55,15 @@ const Gamebaord = React.createClass({
         this.state.answer = this.state.answer.slice(1, sliceEnd);
       }
     return (
-      <div id="game-container">
-        <section className="top-score">
-          <p className="current-winnings">Current Winnings:</p>
-          <p className="p-score" style={{color:score}}>$ {this.state.score}</p>
-        </section>
-        <div className="gameboard">{categoriesArr}</div>
-        <footer>
-          <p className="game-answer">{this.state.answer}</p>
-        </footer>
+      <div id="gameboard-component">
+        <Header score={this.state.score} color={score}/>
+
+        <div className="game-container">
+          <div className="gameboard">{categoriesArr}</div>
+          <footer>
+            <p className="game-answer">{this.state.answer}</p>
+          </footer>
+        </div>
       </div>
     );
   }

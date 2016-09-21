@@ -9,4 +9,10 @@ body {
   font-family: sans-serif;
   margin: 0;
   font-size: 3rem;
+  background: $primary;
+
+}
+
+#app {
+  overflow: hidden;
 }

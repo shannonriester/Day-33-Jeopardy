@@ -71,10 +71,16 @@ const Header = React.createClass({
       return (
         <div className="header-container">
           <header>
+            <section className="top-score">
+              <p className="current-winnings">Current Winnings:</p>
+              <p className="p-score" style={{color:this.props.color}}>$ {this.props.score}</p>
+            </section>
+            <section className="nav-btns-container">
               {homeBtn}
               {newGameBtn}
               <button className="loginBtn" onClick={this.showLogin}>Login</button>
               <button className="signupBtn" onClick={this.showSignup}>Sign Up</button>
+            </section>
           </header>
           {login}
           {signup}

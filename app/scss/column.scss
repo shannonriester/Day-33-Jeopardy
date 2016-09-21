@@ -50,3 +50,34 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .column-container {
+    h3 {
+      font-size: 20px;
+      width: 70%;
+    }
+    ul {
+      li {
+        font-size: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .column-container {
+    h3 {
+      font-size: 18px;
+      // width: 60%;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .column-container {
+    ul {
+      li {
+        font-size: 22px;
+      }
+    }
+  }
+}
