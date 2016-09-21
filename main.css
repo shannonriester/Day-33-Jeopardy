@@ -1,13 +1,8 @@
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; }
-
 header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 10em;
+  width: 100%;
   height: 80px; }
   header h3 {
     margin: none; }
@@ -32,6 +27,41 @@ header {
       border-radius: 2px;
       cursor: pointer; }
 
+.nav-btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 75%; }
+
+.top-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative; }
+
+.p-score, .current-winnings {
+  color: #FED75E;
+  margin: 0;
+  font-size: 25px; }
+
+.p-score {
+  margin-left: 13px; }
+
+@media (max-width: 900px) {
+  header input {
+    padding: 5px; }
+
+  .nav-btns-container {
+    width: 70%; } }
+@media (max-width: 740px) {
+  .p-score, .current-winnings {
+    font-size: 18px; } }
+@media (min-width: 550px) {
+  .top-score {
+    width: 50%; }
+
+  .nav-btns-container {
+    width: 60%; } }
 .signup-modal {
   text-align: center; }
   .signup-modal h3 {
@@ -85,38 +115,18 @@ header {
       color: #FFF;
       cursor: pointer; }
 
-#game-container::after {
-  content: ' ';
-  background: #89BCF1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1; }
+.game-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; }
 
 .gameboard {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  position: relative;
-  bottom: 30px; }
-
-.top-score {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: relative;
-  bottom: 60px;
-  left: 20px;
-  width: 300px; }
-  .top-score p {
-    color: #FED75E;
-    margin: 0;
-    font-size: 25px; }
+  width: 100%; }
 
 footer {
   display: flex;
@@ -127,9 +137,7 @@ footer {
   margin: 0 auto;
   border: solid #FFFCF7 1px;
   border-radius: 2px;
-  color: #FFFCF7;
-  position: relative;
-  bottom: 10px; }
+  color: #FFFCF7; }
 
 .modal-container {
   position: fixed;
@@ -246,9 +254,25 @@ footer {
     .column-container ul .wrong {
       color: #D81912; }
 
+@media (max-width: 1200px) {
+  .column-container h3 {
+    font-size: 20px;
+    width: 70%; }
+  .column-container ul li {
+    font-size: 30px; } }
+@media (max-width: 900px) {
+  .column-container h3 {
+    font-size: 18px; } }
+@media (max-width: 550px) {
+  .column-container ul li {
+    font-size: 22px; } }
 body {
   font-family: sans-serif;
   margin: 0;
-  font-size: 3rem; }
+  font-size: 3rem;
+  background: #89BCF1; }
+
+#app {
+  overflow: hidden; }
 
 /*# sourceMappingURL=main.css.map */
