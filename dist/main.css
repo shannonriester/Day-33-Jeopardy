@@ -139,6 +139,10 @@ footer {
   border-radius: 2px;
   color: #FFFCF7; }
 
+.game-answer {
+  margin: 0;
+  font-size: 30px; }
+
 .modal-container {
   position: fixed;
   display: flex;

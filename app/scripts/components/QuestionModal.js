@@ -32,30 +32,23 @@ const QuestionModal = React.createClass({
         if (word.length < 3 || word === 'the') {
           return false;
         } else {
-          // console.log('filteredAnswer after removing small words', jeopardyAnswer);
           return true;
         }
       });
       if (jeopardyAnswer.length) {
         filteredAnswer = jeopardyAnswer.filter((word) => {
           if (userAnswer.search(word)!= -1) {
-            // console.log('user answer was in jeopardyAnswer', jeopardyAnswer);
             return true;
           } else {
             return false;
           }
         });
       }
-      console.log('jeopardyAnswer in if statement', jeopardyAnswer);
-      // jeopardyAnswer = jeopardyAnswer.join(' ');
     }
 
     if (jeopardyAnswer.length) {
-      console.log('jeopardyAnswer.length', jeopardyAnswer);
       jeopardyAnswer = jeopardyAnswer.join(' ');
     }
-    console.log('jeopardyAnswer final', jeopardyAnswer);
-    // console.log('userAnswer', userAnswer);
     if (userAnswer !== '' && userAnswer !== ' ' && jeopardyAnswer === userAnswer && filteredAnswer) {
       this.props.correctAnswer(this.props.clue);
     } else {
