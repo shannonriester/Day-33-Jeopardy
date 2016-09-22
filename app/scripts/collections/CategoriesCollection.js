@@ -17,6 +17,8 @@ const CategoriesCollection = Backbone.Collection.extend({
     this.each((categoryModel) => {
       categoryModel.getCategory(Math.floor(Math.random() * 18000));
     });
+
+    return true;
   },
   findModel: function(clue) {
     let categoryModel;

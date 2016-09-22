@@ -12,24 +12,32 @@ const Gamebaord = React.createClass({
       categories: store.categories.toJSON(),
       score: 0,
       answer: '',
+      newGame: false,
+    }
+  },
+  updateState: function() {
+    this.setState({
+      categories: store.categories.toJSON(),
+      score: store.score.get('winnings'),
+      answer: store.score.get('answer'),
+    });
+    //reset the answer section when you make a new game
+    if (this.state.answer !== '') {
+      this.setState({answer: ''});
+    }
+
+    if (store.categories.makeNewGame) {
+      this.setState({newGame: true});
     }
   },
   componentDidMount: function(){
-    store.categories.on('change', () => {
-      this.setState({categories: store.categories.toJSON()});
-      //reset the answer section when you make a new game
-      if (this.state.answer !== '') {
-        this.setState({answer: ''});
-      }
-    });
-
+    store.categories.on('change', this.updateState);
+    store.score.on('change', this.updateState);
     store.categories.makeNewGame();
-
-    store.score.on('change', () => {
-      this.setState({score : store.score.get('winnings')});
-      this.setState({answer : store.score.get('answer')});
-    });
-
+  },
+  componentWillUnmount: function() {
+    store.categories.off('change', this.updateState);
+    store.score.off('change', this.updateState);
   },
   render: function(){
     let score;
@@ -41,7 +49,7 @@ const Gamebaord = React.createClass({
 
     let categoriesArr = this.state.categories.map((catObj, i, arr) => {
       let index=i;
-      return (<CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />);
+      return (<CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} wasViewed={this.state.newGame} />);
       });
 
       let currAnswer;

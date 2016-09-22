@@ -10,7 +10,7 @@ const CategoryColumn = React.createClass({
     return {
       showModal: false,
       clue: '',
-      wasViewed: false,
+      wasViewed: this.props.wasViewed,
       modalView: undefined,
       answer: ['unanswered', 'unanswered', 'unanswered', 'unanswered', 'unanswered'],
     }
