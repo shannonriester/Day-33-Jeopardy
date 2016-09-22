@@ -12,7 +12,6 @@ const Score = Backbone.Model.extend({
   },
   correctAnswer: function(clue) {
     console.log('RIGHT ON! CORRECT ANSWER');
-    console.log(clue);
     let answer = clue.answer;
     let newScore = clue.value + this.get('winnings');
 
@@ -25,7 +24,6 @@ const Score = Backbone.Model.extend({
   },
   wrongAnswer: function(clue){
     console.log('WRONG ANSWER');
-
     let answer = clue.answer;
     let newScore = this.get('winnings') - clue.value;
 

@@ -44,15 +44,19 @@ const Gamebaord = React.createClass({
       return (<CategoryColumn key={i} title={catObj.category.title} clues={catObj.category.clues} />);
       });
 
+      let currAnswer;
+
       if (this.state.answer.indexOf('<i>') !== -1) {
         let length = this.state.answer.length;
         let sliceEnd = length - 4;
         this.state.answer = this.state.answer.slice(3, sliceEnd);
+        // currAnswer = this.state.answer;
       }
       if (this.state.answer.indexOf('"') !== -1) {
         let length = this.state.answer.length;
         let sliceEnd = length - 1;
         this.state.answer = this.state.answer.slice(1, sliceEnd);
+        // currAnswer = this.state.answer;
       }
     return (
       <div id="gameboard-component">
