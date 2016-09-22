@@ -26,31 +26,37 @@ const QuestionModal = React.createClass({
 
     jeopardyAnswer = jeopardyAnswer.replace('<i>','').replace('</i>','').replace('(','').replace(')','').replace('\\','');
     jeopardyAnswer = jeopardyAnswer.split(' ');
-
+    let filteredAnswer;
     if (jeopardyAnswer.length > 1) {
-      jeopardyAnswer = jeopardyAnswer.filter((word) => {
+      filteredAnswer = jeopardyAnswer.filter((word) => {
         if (word.length < 3 || word === 'the') {
           return false;
         } else {
-          console.log('filteredAnswer after removing small words', jeopardyAnswer);
-          return word;
+          // console.log('filteredAnswer after removing small words', jeopardyAnswer);
+          return true;
         }
       });
       if (jeopardyAnswer.length) {
-        jeopardyAnswer = jeopardyAnswer.filter((word) => {
+        filteredAnswer = jeopardyAnswer.filter((word) => {
           if (userAnswer.search(word)!= -1) {
-            console.log('user answer was in jeopardyAnswer', jeopardyAnswer);
-            return word;
+            // console.log('user answer was in jeopardyAnswer', jeopardyAnswer);
+            return true;
           } else {
             return false;
           }
         });
       }
+      console.log('jeopardyAnswer in if statement', jeopardyAnswer);
+      // jeopardyAnswer = jeopardyAnswer.join(' ');
     }
-    let filteredAnswer = jeopardyAnswer.join(' ');
-    console.log('filteredAnswer', filteredAnswer);
+
+    if (jeopardyAnswer.length) {
+      console.log('jeopardyAnswer.length', jeopardyAnswer);
+      jeopardyAnswer = jeopardyAnswer.join(' ');
+    }
+    console.log('jeopardyAnswer final', jeopardyAnswer);
     // console.log('userAnswer', userAnswer);
-    if (filteredAnswer !== '' && filteredAnswer !== ' ' && filteredAnswer === userAnswer) {
+    if (userAnswer !== '' && userAnswer !== ' ' && jeopardyAnswer === userAnswer && filteredAnswer) {
       this.props.correctAnswer(this.props.clue);
     } else {
       this.props.wrongAnswer(this.props.clue);

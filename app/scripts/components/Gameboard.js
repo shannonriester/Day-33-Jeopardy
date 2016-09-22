@@ -39,7 +39,7 @@ const Gamebaord = React.createClass({
     store.categories.off('change', this.updateState);
     store.score.off('change', this.updateState);
   },
-  render: function(){
+  render: function() {
     let score;
     if (this.state.score > 0) {
       score = '#4BF973';
@@ -58,13 +58,11 @@ const Gamebaord = React.createClass({
         let length = this.state.answer.length;
         let sliceEnd = length - 4;
         this.state.answer = this.state.answer.slice(3, sliceEnd);
-        // currAnswer = this.state.answer;
       }
       if (this.state.answer.indexOf('"') !== -1) {
         let length = this.state.answer.length;
         let sliceEnd = length - 1;
         this.state.answer = this.state.answer.slice(1, sliceEnd);
-        // currAnswer = this.state.answer;
       }
     return (
       <div id="gameboard-component">
