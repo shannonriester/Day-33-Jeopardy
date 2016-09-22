@@ -26,7 +26,6 @@ const CategoriesCollection = Backbone.Collection.extend({
       model = model.toJSON();
       categoryModel = this.findWhere({id: model.category.id});
     });
-    console.log(categoryModel);
   },
 });
 

@@ -28,8 +28,8 @@ const Session = Backbone.Model.extend({
     this.save({username: username, password: password},
       {
       success: (model, response) => {
-        console.log('USER SIGNED IN');
-        console.log('username ', username);
+        // console.log('USER SIGNED IN');
+        // console.log('username ', username);
         localStorage.authtoken = response._kmd.authtoken;
         this.unset('password');
         this.trigger('change');

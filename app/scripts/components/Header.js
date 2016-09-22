@@ -18,12 +18,6 @@ const Header = React.createClass({
       sessionChange: false
     };
   },
-  componentDidMount: function() {
-    session.on('change', () => {
-      this.setState({authtoken: true});
-      console.log('CHANGED SESSION');
-    });
-  },
   runNewGame: function(){
     store.categories.reset();
     store.score.set('winnings', 0);
@@ -50,6 +44,16 @@ const Header = React.createClass({
   runLogout: function(e){
     e.preventDefault();
     session.logout();
+  },
+  componentDidMount: function() {
+    session.on('change', () => {
+      this.setState({authtoken: true});
+    });
+  },
+  componentWillUnmount: function() {
+    session.off('change', () => {
+      this.setState({authtoken: true});
+    });
   },
   render: function() {
 

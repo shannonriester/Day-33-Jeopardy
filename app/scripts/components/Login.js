@@ -12,7 +12,6 @@ const Login = React.createClass({
 
     session.login(username, password);
     this.props.hideLogin();
-    // console.log(this.props);
   },
   render: function() {
     return (
