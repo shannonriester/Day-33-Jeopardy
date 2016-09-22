@@ -33,21 +33,22 @@ const QuestionModal = React.createClass({
           return false;
         } else {
           console.log('filteredAnswer after removing small words', jeopardyAnswer);
-          return true;
+          return word;
         }
       });
-      jeopardyAnswer = jeopardyAnswer.map((word) => {
-        if (userAnswer.search(word)!= -1) {
-          console.log('user answer in jeopardyAnswer', jeopardyAnswer);
-          return true;
-        } else {
-          return false;
-        }
-      });
+      if (jeopardyAnswer.length) {
+        jeopardyAnswer = jeopardyAnswer.filter((word) => {
+          if (userAnswer.search(word)!= -1) {
+            console.log('user answer was in jeopardyAnswer', jeopardyAnswer);
+            return word;
+          } else {
+            return false;
+          }
+        });
+      }
     }
-
-    let filteredAnswer = jeopardyAnswer.join(' ')
-    // console.log('filteredAnswer', filteredAnswer);
+    let filteredAnswer = jeopardyAnswer.join(' ');
+    console.log('filteredAnswer', filteredAnswer);
     // console.log('userAnswer', userAnswer);
     if (filteredAnswer !== '' && filteredAnswer !== ' ' && filteredAnswer === userAnswer) {
       this.props.correctAnswer(this.props.clue);
@@ -58,6 +59,7 @@ const QuestionModal = React.createClass({
   },
   passAnswer: function() {
     this.props.wrongAnswer(this.props.clue);
+    this.props.hideModal();
   },
   render: function(){
     console.log(this.props.clue.answer);
