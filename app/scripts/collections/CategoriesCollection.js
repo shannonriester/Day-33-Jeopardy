@@ -1,7 +1,6 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
 
-
 import CategoryModel from '../models/CategoryModel';
 
 const CategoriesCollection = Backbone.Collection.extend({
@@ -9,7 +8,7 @@ const CategoriesCollection = Backbone.Collection.extend({
   url: `http://jservice.io/api/category?id=4`,
   makeNewGame: function(gameState) {
     this.reset();
-
+    
     _(6).times(() => {
       this.add({});
     });
@@ -20,13 +19,13 @@ const CategoriesCollection = Backbone.Collection.extend({
 
     return true;
   },
-  findModel: function(clue) {
-    let categoryModel;
-    this.models.forEach((model, i) => {
-      model = model.toJSON();
-      categoryModel = this.findWhere({id: model.category.id});
-    });
-  },
+  // findModel: function(clue) {
+  //   let categoryModel;
+  //   this.models.forEach((model, i) => {
+  //     model = model.toJSON();
+  //     categoryModel = this.findWhere({id: model.category.id});
+  //   });
+  // },
 });
 
 export default CategoriesCollection;

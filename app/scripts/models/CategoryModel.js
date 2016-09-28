@@ -14,7 +14,7 @@ const CategoryModel = Backbone.Model.extend({
     $.ajax({
       type: 'GET',
       url: `http://jservice.io/api/category?id=${categoryId}`,
-      success: (response) =>{
+      success: (response) => {
         let filterN = 200;
         let category = response;
         let cluesArr = category.clues.filter((clue, i, arr) => {
